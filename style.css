@@ -1,0 +1,77 @@
+/*
+Theme Name: Voce
+Description: The custom WordPress theme developed by Voce Connect.
+Version: 1.0
+Author:
+*/
+
+/* generic/reset styles */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+body {line-height: 1; text-align: center;}
+blockquote, q {quotes: none;}
+:focus {outline: 0;}
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+table {border-collapse: collapse; border-spacing: 0;}
+div {position: relative;}
+strong {font-weight: bold;}
+em {font-style: italic;}
+code {font-family: courier; background: #ededed; border: 1px solid #888; margin-top: 12px; padding: 10px;}
+small {font-size: 11px;}
+img {display: block; vertical-align: middle;}
+ul {list-style: none;}
+a {outline: none; text-decoration: none;}
+a:hover {text-decoration: underline;}
+img.wp-smiley {display: inline; vertical-align: middle;}
+h1, h2, h3, h4, h5 {line-height: 18px;}
+h1, h1 a {font-size: 30px;}
+h2, h2 a {font-size: 24px;}
+h3, h3 a {font-size: 20px;}
+h4, h4 a {font-size: 16px;}
+h5, h5 a {font-size: 14px;}
+.alignright {float: right; display: inline;}
+.alignleft {float: left; display: inline;}
+.aligncenter {margin: 0 auto; text-align: center;}
+.sprite {background: url(images/sprite.gif) no-repeat;}
+
+/* main container, almost always centered */
+#page {margin: 0 auto; text-align: left; width: 980px; font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
+
+/* top section, usually included in the header.php */
+#top {}
+
+/* cols is made up of .well and .sidebar */
+#cols {}
+
+/* well is the middle area */
+.well {}
+.post-entry {font-size: 12px;}
+.post-entry h1, .post-entry h2, .post-entry h3, .post-entry h4, .post-entry h5 {padding-top: 18px;}
+.post-entry h1.pagetitle {padding-top: 0;}
+.post-entry ul, .post-entry ol {margin: 15px 0 0 25px;}
+.post-entry ul {list-style: disc;}
+.post-entry form {margin-top: 15px;}
+.post-entry p {padding-top: 15px;}
+.post-entry input, .post-entry textarea {font: 12px Arial;}
+.post-entry img.alignright, .post-entry img.alignleft, .post-entry img.aligncenter {margin-top: 10px; margin-bottom: 10px;}
+.post-entry img.alignright {margin-left: 15px;}
+.post-entry img.alignleft {margin-right: 15px;}
+table {margin-top: 15px;}
+th {font-weight: bold; padding: 10px 8px 8px 8px;}
+td {padding: 8px;}
+blockquote {margin: 15px 20px 0 20px; padding: 0 12px 12px 12px;}
+
+/* sidebar styles */
+.sidebar {}
+
+/* footer styles in here */
+#footer {}
+
+/* universal classes */
+.no-border {border: none;}
+.no-margin {margin: 0;}
+.no-padding {padding: 0;}
+.inline {display: inline;}
+.smaller-font {font-size: 11px;}
+.larger-font {font-size: 14px;}
+.clr {clear: both; height: 0px; overflow: hidden;}

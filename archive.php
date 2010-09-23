@@ -1,0 +1,55 @@
+<?php get_header();?>
+
+	<div class="well" role="main">
+
+		<?php if (have_posts()) : ?>
+
+ 	  <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
+ 	  <?php /* If this is a category archive */ if (is_category()) { ?>
+		<h1 class="pagetitle"><?php printf('Archive for the &#8216;%s&#8217; Category', single_cat_title('', false)); ?></h1>
+ 	  <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
+		<h1 class="pagetitle"><?php printf('Posts Tagged &#8216;%s&#8217;', single_tag_title('', false) ); ?></h1>
+ 	  <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
+		<h1 class="pagetitle"><?php printf('Archive for %s|Daily archive page', get_the_time('F jS, Y')); ?></h1>
+ 	  <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
+		<h1 class="pagetitle"><?php printf('Archive for %s|Monthly archive page', get_the_time('F, Y')); ?></h1>
+ 	  <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
+		<h1 class="pagetitle"><?php printf('Archive for %s|Yearly archive page', get_the_time('Y')); ?></h1>
+	  <?php /* If this is an author archive */ } elseif (is_author()) { ?>
+		<h1 class="pagetitle">Author Archive</h1>
+ 	  <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+		<h1 class="pagetitle">Blog Archives</h1>
+ 	  <?php } ?>
+
+
+		<?php while (have_posts()) : the_post(); ?>
+
+			<?php get_template_part( 'post-loop' );?>
+
+		<?php endwhile; ?>
+
+		<div class="navigation">
+			<div class="alignleft"><?php next_posts_link('&laquo; Older Entries'); ?></div>
+			<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;'); ?></div>
+			<div class="clr"></div>
+		</div>
+	<?php else :
+
+		if ( is_category() ) { // If this is a category archive
+			echo("<h1 class='pagetitle'>Sorry, but there aren't any posts in the" . single_cat_title('',false) . " category yet.</h1>");
+		} else if ( is_date() ) { // If this is a date archive
+			echo("<h1 class='pagetitle'>Sorry, but there aren't any posts with this date.</h1>");
+		} else if ( is_author() ) { // If this is a category archive
+			$userdata = get_userdatabylogin(get_query_var('author_name'));
+			echo("<h1 class='pagetitle'>Sorry, but there aren't any posts by " . $userdata->display_name . " yet.</h1>");
+		} else {
+			echo("<h1 class='pagetitle'>No posts found.</h1>");
+		}
+	  get_search_form();
+	endif;
+?>
+	</div>
+
+<?php get_sidebar(); ?>
+
+<?php get_footer(); ?>
