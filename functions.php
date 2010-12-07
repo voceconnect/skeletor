@@ -37,6 +37,20 @@ if ( function_exists('register_sidebar') ) {
 		'before_title' => '<h2>',
 		'after_title' => '</h2>',
 	));
+
+
+	 // secondary sidebar that shows up everywhere but the home page if it has
+	 // widgets, otherwise the sidebar above is used
+	 register_sidebar(array(
+		'name' => 'Secondary Sidebar',
+		'id' => 'sidebar-secondary',
+		'description' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	));
+
 }
 
 //comment function
@@ -80,3 +94,15 @@ function filter_body_class($classes){
 	return $classes;
 }
 add_filter('body_class','filter_body_class');
+
+/**
+ * Wrap a permalink to the post around the post thumbnail
+ *
+ * @param string $html thumbnail html from filter
+ * @param int $post_id post_id of post with thumbnail
+ * @return string html of thumbnail with link to post
+ */
+function add_thumbnail_link($html, $post_id) {
+	return sprintf('<a href="%s">%s</a>', get_permalink($post_id), $html);
+}
+add_filter('post_thumbnail_html', 'add_thumbnail_link', 10, 2);
