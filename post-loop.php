@@ -6,6 +6,7 @@
 	<?php endif;?>
 	<small><?php the_time('F jS, Y') ?> <!-- by <?php the_author() ?> --></small>
 	<div class="post-entry">
+		<?php if (function_exists('has_post_thumbnail') && has_post_thumbnail()) : the_post_thumbnail(); endif; ?>
 		<?php the_content('Read the rest of this entry &raquo;'); ?>
 		<div class="clr"></div>
 	</div>
