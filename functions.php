@@ -94,15 +94,3 @@ function filter_body_class($classes){
 	return $classes;
 }
 add_filter('body_class','filter_body_class');
-
-/**
- * Wrap a permalink to the post around the post thumbnail
- *
- * @param string $html thumbnail html from filter
- * @param int $post_id post_id of post with thumbnail
- * @return string html of thumbnail with link to post
- */
-function add_thumbnail_link($html, $post_id) {
-	return sprintf('<a href="%s">%s</a>', get_permalink($post_id), $html);
-}
-add_filter('post_thumbnail_html', 'add_thumbnail_link', 10, 2);
