@@ -46,14 +46,14 @@ function mytheme_comment($comment, $args, $depth) {
 	<div <?php comment_class(); ?> id="div-comment-<?php comment_ID() ?>">
 		<div id="comment-<?php comment_ID(); ?>" class="comment-id">
 		<div class="author-info">
-			<?php comment_author_link() ?> <span><?php if ($comment->comment_author_email == get_the_author_email()) echo 'responded'; else echo 'said'; ?>:</span><br/>
-			<small><?php printf(__('%1$s at %2$s'), get_comment_date(),	get_comment_time()) ?></small>
+			<?php comment_author_link() ?> <span><?php if ($comment->comment_author_email == get_the_author_email()) _e('responded','skeletor'); else _e('said','skeletor'); ?>:</span><br/>
+			<small><?php printf(__('%1$s at %2$s','skeletor'), get_comment_date(),	get_comment_time()) ?></small>
 		</div>
 		<div class="comment-text">
 			<?php comment_text() ?>
 			<?php if ($comment->comment_approved == '0') : ?>
 				<br />
-				<em><?php _e('Your comment is awaiting moderation.') ?></em>
+				<em><?php _e('Your comment is awaiting moderation.', 'skeletor') ?></em>
 			<?php endif; ?>
 			<div class="reply">
 				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>

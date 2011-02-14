@@ -7,7 +7,7 @@
 		<?php comments_template(); ?>
 	<?php endwhile; else: ?>
 
-		<h1 class="pagetitle">Sorry, no posts matched your criteria.</h1>
+		<h1 class="pagetitle"><?php _e('Sorry, no posts matched your criteria.');?></h1>
 
 	<?php endif; ?>
 
