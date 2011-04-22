@@ -8,6 +8,6 @@
 	<div class="post-entry">
 		<?php the_content(__('Read the rest of this entry &raquo;','skeletor')); ?>
 		<div class="clr"></div>
-	</div>
+	</div> <!-- end post-entry -->
 	<p class="postmetadata"><?php the_tags(__('Tags: ','skeletor'), ', ', '<br />'); ?> <?php _e('Posted in','skeletor');?> <?php echo get_the_category_list(', '); ?> | <?php edit_post_link(__('Edit','skeletor'), '', ' | '); ?>  <?php comments_popup_link(__('Add a Comment', 'skeletor'), __('1 Comment','skeletor'), __('% Comments','skeletor'), '', __('Comments Closed','skeletor')); ?></p>
-</div>
+</div> <!-- end post -->

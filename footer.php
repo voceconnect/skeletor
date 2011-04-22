@@ -1,5 +1,5 @@
 		<div class="clr"></div>
-	</div>
+	</div> <!-- end main -->
 	<footer>
 
 	</footer>

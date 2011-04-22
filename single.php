@@ -11,7 +11,7 @@
 
 	<?php endif; ?>
 
-	</div>
+	</div> <!-- end well -->
 
 <?php get_sidebar(); ?>
 
