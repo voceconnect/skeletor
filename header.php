@@ -13,7 +13,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/img/favicon.ico"/>
-  <link rel="apple-touch-icon" href="<?php bloginfo('template_directory');?>/img/apple-touch-icon.png"/>
+  <link rel="apple-touch-icon" href="<?php bloginfo('template_directory');?>/img/voce_appletouch.png"/>
 
   <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/style.css">
   <script src="<?php bloginfo('template_directory');?>/js/libs/modernizr-1.7.min.js"></script>
