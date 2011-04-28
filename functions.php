@@ -11,14 +11,15 @@ if ( ! isset( $content_width ) )
  * Global theme script enqueing
  *
  */
-function voce_theme_enqueue_scripts() {
+/*function voce_theme_enqueue_scripts() {
 	$template_dir = get_template_directory_uri();
 	if ( !is_admin() ) {
+		wp_enqueue_script('jquery');
 		wp_enqueue_script('main', $template_dir . '/js/main.js', 'jquery', false, true);
 	}
 }
 add_action('wp_enqueue_scripts', 'voce_theme_enqueue_scripts',null,null,true);
-
+*/
 
 //plugin includes
 //require_once(dirname(__FILE__).'/plugins/.php');

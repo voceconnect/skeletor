@@ -1,25 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en" xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en" xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en" xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en" xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<head profile="http://gmpg.org/xfn/11">
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+  <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/img/favicon.ico"/>
+  <link rel="apple-touch-icon" href="<?php bloginfo('template_directory');?>/img/voce_appletouch.png"/>
 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<!-- Typekit JS Files, don't forget to change the account number in the first line
-<script type="text/javascript" src="http://use.typekit.com/beo8usd.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
--->
+  <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/style.css">
+  <script src="<?php bloginfo('template_directory');?>/js/libs/modernizr-1.7.min.js"></script>
 
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<!-- Typekit JS Files, don't forget to change the account number in the first line
+	<script type="text/javascript" src="http://use.typekit.com/beo8usd.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	-->
 
-<?php wp_head(); ?>
+	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+
+	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-<div id="page">
-	<div id="top">
 
-	</div>
-	<div id="cols">
+<body <?php body_class(); ?>>
+<div id="container">
+	<header>
+
+	</header>
+	<div id="main">

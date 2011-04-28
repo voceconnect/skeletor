@@ -11,7 +11,7 @@
 			<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries','skeletor')) ?></div>
 			<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;','skeletor')) ?></div>
 			<div class="clr"></div>
-		</div>
+		</div> <!-- end navigation -->
 
 	<?php else : ?>
 
@@ -21,7 +21,7 @@
 
 	<?php endif; ?>
 
-	</div>
+	</div> <!-- end well -->
 
 <?php get_sidebar(); ?>
 

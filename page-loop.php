@@ -4,5 +4,5 @@
 		<?php the_content(__('Read the rest of this entry &raquo;', 'skeletor')); ?>
 		<div class="clr"></div>
 		<?php edit_post_link(__('Edit','skeletor'), '<p>', '</p>'); ?>
-	</div>
-</div>
+	</div> <!-- end post-entry -->
+</div> <!-- end post -->

@@ -32,23 +32,24 @@
 			<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries', 'skeletor')); ?></div>
 			<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;', 'skeletor')); ?></div>
 			<div class="clr"></div>
-		</div>
+		</div> <!-- end navigation -->
+
 	<?php else :
 
 		if ( is_category() ) { // If this is a category archive
 			echo('<h1 class="pagetitle">'.__("Sorry, but there aren't any posts in the", "skeletor") . single_cat_title("",false) . ' category yet.</h1>');
-		} else if ( is_date() ) { // If this is a date archive
+		} elseif ( is_date() ) { // If this is a date archive
 			echo('<h1 class="pagetitle">' . __("Sorry, but there aren't any posts with this date.", "skeletor") . '</h1>');
-		} else if ( is_author() ) { // If this is a category archive
+		} elseif ( is_author() ) { // If this is a category archive
 			$userdata = get_userdatabylogin(get_query_var('author_name'));
-			echo('<h1 class="pagetitle">' . __"Sorry, but there aren't any posts by ", "skeletor") . $userdata->display_name . ' yet.</h1>');
+			echo('<h1 class="pagetitle">' . __("Sorry, but there aren't any posts by ", "skeletor") . $userdata->display_name . ' yet.</h1>');
 		} else {
 			echo('<h1 class="pagetitle">' . __("No posts found", "skeletor") . '</h1>');
 		}
 	  get_search_form();
 	endif;
 ?>
-	</div>
+	</div> <!-- end well -->
 
 <?php get_sidebar(); ?>
 
