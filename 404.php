@@ -2,9 +2,9 @@
 
 	<div class="well">
 
-		<h1 class="pagetitle">Error 404 - Page Not Found</h1>
+		<h1 class="pagetitle"><?php _e('Error 404 - Page Not Found', 'skeletor');?></h1>
 
-	</div>
+	</div> <!-- end well -->
 
 <?php get_sidebar(); ?>
 

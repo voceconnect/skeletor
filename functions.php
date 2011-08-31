@@ -1,4 +1,47 @@
 <?php
+remove_action( 'wp_head', 'rsd_link' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'index_rel_link' );
+remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
+remove_action( 'wp_head', 'wp_generator' );
+add_filter( 'show_admin_bar', '__return_false' );
+
+/**
+ * cache busts the passed in asset when it has been modified by appending a
+ * date/time stamp as a querystring parameter
+ *
+ * @return (string) the asset to be cache busted with query string param
+ **/
+function voce_cache_buster( $url, $mtime = null ) {
+	if ( strpos($url, '?m=') )
+		return $url;
+
+	if ( is_null($mtime) ) {
+		$parts = parse_url( $url );
+
+	    if ( !isset($parts['path']) || empty($parts['path']) ) {
+			$mtime = false;
+		} else {
+			$file = ABSPATH . ltrim( $parts['path'], '/' );
+
+			// comment out next two lines for standard wp install
+			global $current_blog;
+			$file = str_ireplace($current_blog->path . "wp-content", "/wp-content", $file);
+
+			if ( !$mtime = @filemtime( $file ) )
+				$mtime = false;
+		}
+	}
+
+	if ( !$mtime )
+		return $url;
+
+	list($url, $q) = explode( '?', $url, 2); //Get rid of any query string
+	return "$url?m=$mtime";
+}
+
 //theme settings & image sizes
 if ( ! isset( $content_width ) )
 	$content_width = 640;
@@ -14,7 +57,8 @@ if ( ! isset( $content_width ) )
 function voce_theme_enqueue_scripts() {
 	$template_dir = get_template_directory_uri();
 	if ( !is_admin() ) {
-		wp_enqueue_script('main', $template_dir . '/js/main.js', 'jquery', false, true);
+		wp_enqueue_script('jquery');
+		wp_enqueue_script('main', $template_dir . '/js/script.js', 'jquery', false, true);
 	}
 }
 add_action('wp_enqueue_scripts', 'voce_theme_enqueue_scripts',null,null,true);
@@ -60,14 +104,14 @@ function mytheme_comment($comment, $args, $depth) {
 	<div <?php comment_class(); ?> id="div-comment-<?php comment_ID() ?>">
 		<div id="comment-<?php comment_ID(); ?>" class="comment-id">
 		<div class="author-info">
-			<?php comment_author_link() ?> <span><?php if ($comment->comment_author_email == get_the_author_email()) echo 'responded'; else echo 'said'; ?>:</span><br/>
-			<small><?php printf(__('%1$s at %2$s'), get_comment_date(),	get_comment_time()) ?></small>
+			<?php comment_author_link() ?> <span><?php if ($comment->comment_author_email == get_the_author_email()) _e('responded','skeletor'); else _e('said','skeletor'); ?>:</span><br/>
+			<small><?php printf(__('%1$s at %2$s','skeletor'), get_comment_date(),	get_comment_time()) ?></small>
 		</div>
 		<div class="comment-text">
 			<?php comment_text() ?>
 			<?php if ($comment->comment_approved == '0') : ?>
 				<br />
-				<em><?php _e('Your comment is awaiting moderation.') ?></em>
+				<em><?php _e('Your comment is awaiting moderation.', 'skeletor') ?></em>
 			<?php endif; ?>
 			<div class="reply">
 				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
