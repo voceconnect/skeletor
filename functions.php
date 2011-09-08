@@ -59,6 +59,7 @@ function voce_theme_enqueue_scripts() {
 	if ( !is_admin() ) {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('main', $template_dir . '/js/script.js', 'jquery', false, true);
+		wp_enqueue_script('plugins', $template_dir . '/js/plugins.js', 'jquery', false, true);
 	}
 }
 add_action('wp_enqueue_scripts', 'voce_theme_enqueue_scripts',null,null,true);
