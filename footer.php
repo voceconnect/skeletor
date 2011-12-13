@@ -6,6 +6,11 @@
 </div>
 <?php wp_footer(); ?>
 
+<!-- scripts concatenated and minified via ant build script-->
+<script src="<?php get_template_directory_uri(); ?>/js/plugins.js"></script>
+<script src="<?php get_template_directory_uri(); ?>/js/script.js"></script>
+<!-- end scripts-->
+
 <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
      chromium.org/developers/how-tos/chrome-frame-getting-started -->
 <!--[if lt IE 7 ]>
