@@ -1,6 +1,6 @@
 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <?php if (is_single()) : ?>
-        <h1 class="pagetitle"><?php the_title(); ?></h1>
+        <h1><?php the_title(); ?></h1>
     <?php else : ?>
         <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent Link to ', 'skeletor'); ?><?php the_title_attribute('echo=0'); ?>"><?php the_title(); ?></a></h2>
     <?php endif; ?>

@@ -15,11 +15,11 @@
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        <link rel="shortcut icon" href="<?php get_template_directory_uri(); ?>/img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="<?php get_template_directory_uri() ?>/img/voce_appletouch.png"/>
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/img/voce_appletouch.png"/>
 
-        <link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/style.css">
-        <script src="<?php get_template_directory_uri() ?>;/js/libs/modernizr-2.0.6.min.js"></script>
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+        <script src="<?php echo get_template_directory_uri() ?>;/js/libs/modernizr-2.0.6.min.js"></script>
 
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 

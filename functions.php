@@ -143,3 +143,16 @@ function filter_body_class($classes) {
 }
 
 add_filter('body_class', 'filter_body_class');
+
+add_action("admin_head-{$pagenow}", 'voce_add_help_tabs_to_theme_page');
+
+function voce_add_help_tabs_to_theme_page() {
+    $screen = get_current_screen();
+    $screen->set_help_sidebar('Test content' );
+    $screen->add_help_tab(array(
+        'id' => 'additional-plugin-help', // This should be unique for the screen.
+        'title' => 'Special Instructions',
+        'content' => '<p>This is the content for the tab.</p>',
+            // Use 'callback' instead of 'content' for a function callback that renders the tab content.
+    ));
+}
