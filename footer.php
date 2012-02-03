@@ -7,7 +7,6 @@
 <?php wp_footer(); ?>
 
 <!-- scripts concatenated and minified via ant build script-->
-<script src="<?php get_template_directory_uri(); ?>/js/plugins.js"></script>
 <script src="<?php get_template_directory_uri(); ?>/js/script.js"></script>
 <!-- end scripts-->
 

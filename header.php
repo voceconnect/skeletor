@@ -16,7 +16,10 @@
         <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/img/voce_appletouch.png"/>
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/print.css" media="print"/>
-        <script src="<?php echo get_template_directory_uri() ?>;/js/libs/modernizr-2.0.6.min.js"></script>
+        <!--[if (gte IE 6)&(lte IE 8)]>
+			<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/libs/selectivizr-min.js"></script>
+			<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/libs/modernizr-2.0.6.min.js"></script>
+        <![endif]-->			
 
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
