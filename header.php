@@ -15,7 +15,6 @@
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico"/>
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/img/voce_appletouch.png"/>
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/print.css" media="print"/>
         <!--[if (gte IE 6)&(lte IE 8)]>
 			<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/libs/selectivizr-min.js"></script>
 			<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/libs/modernizr-2.5.1-min.js"></script>
