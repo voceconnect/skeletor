@@ -1,0 +1,65 @@
+@import "compass";
+@import "reset";
+
+/*========================= Begin custom styles =====================*/
+body {}
+
+@mixin font-style($amount) {font-size: $amount;line-height: ($amount * 1.1);}
+@for $level from 0 to 5 {
+	h#{$level + 1} {padding-top: 20px; font-family: Arial; @include font-style(30px - ($level * 2.5px)); color: #3e3e3e;}
+	h#{$level + 1} + p {padding-top: 10px;}
+}		
+
+.sprite {background: url(img/sprite.gif) no-repeat;}
+.wp-caption {}
+.wp-caption-text{}
+.gallery-caption {}
+
+/* main container, almost always centered */
+#container {margin: 0 auto; text-align: left; width: 980px; font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
+
+/* top section, usually included in the header.php */
+header {}
+nav {}
+	
+/* cols is made up of .well and .sidebar */
+#main {}
+
+/* well is the middle area */
+.well {}
+.post-entry {
+	font-size: 12px;
+	h1, h2, h3, h4, h5 {padding-top: 18px;}
+	h1.pagetitle {padding-top: 0;}
+	ul, .post-entry ol {margin: 15px 0 0 25px;}
+	ul {list-style: disc;}
+	form {margin-top: 15px;}
+	p {padding-top: 15px;}
+	input, {font: 12px Arial;}
+	img.alignright, img.alignleft, img.aligncenter {margin-top: 10px; margin-bottom: 10px;}
+	img.alignright {margin-left: 15px;}
+	img.alignleft {margin-right: 15px;}
+	table {margin-top: 15px;}
+	th {padding: 10px 8px 8px 8px;}
+	td {padding: 8px;}
+}
+
+/* sidebar styles */
+.sidebar {}
+
+/* footer styles in here */
+footer {}
+
+/* ======== end custom styles ================ */
+.no-border {border: none;}
+.no-bg {background: none;}
+.no-margin {margin: 0;}
+.no-padding {padding: 0;}
+.inline {display: inline;}
+.clr {clear: both; height: 0px; overflow: hidden;}
+.hidden { display: none !important; visibility: hidden;}
+.alignright {float: right; display: inline;}
+.alignleft {float: left; display: inline;}
+.aligncenter {margin: 0 auto; text-align: center;}
+
+@import "prints";
