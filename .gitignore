@@ -1,5 +1,73 @@
 # system files
+.htaccess
+.htpasswd
+/config
+/Capfile
+.DS_Store
+Thumbs.db
+sitemap.xml*
 .sass-cache
 
+# vip files
+REVISION
+.svn
+wp-content/themes/vip
+
 # wpms files
-/README.mdown
+/README.txt
+/htaccess.dist
+/index-install.php
+/wp-activate.php
+/wp-content/blogs.php
+/wp-content/blogs.dir
+/wp-content/plugins/readme.txt
+/wp-content/themes/home
+/wp-signup.php
+/wpmu-settings.php
+
+# wordpress files
+/wp-app.php
+/wp-atom.php
+/wp-blog-header.php
+/wp-comments-post.php
+/wp-commentsrss2.php
+/wp-cron.php
+/wp-feed.php
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-pass.php
+/wp-rdf.php
+/wp-register.php
+/wp-rss.php
+/wp-rss2.php
+/wp-settings.php
+/wp-trackback.php
+/xmlrpc.php
+/index.php
+/license.txt
+/readme.html
+
+# wpms and wordpress files
+/wp-config.php
+/wp-config-sample.php
+/wp-admin
+/wp-includes
+/wp-content/index.php
+/wp-content/uploads/*
+/wp-content/themes/default
+/wp-content/themes/classic
+
+# caching
+/wp-content/cache/*
+/wp-content/advanced-cache.php
+/wp-content/object-cache.php
+/wp-content/wp-cache-config.php
+
+# 3.0 files
+/wp-content/themes/twentyeleven
+/wp-content/themes/twentyten
+/wp-content/plugins/hello.php
+/wp-content/themes/index.php
+/wp-content/plugins/index.php
