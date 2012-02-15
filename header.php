@@ -1,8 +1,8 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"  <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"  <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"  <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"  <?php language_attributes(); ?>> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 
@@ -16,8 +16,8 @@
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/img/voce_appletouch.png"/>
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
         <!--[if (gte IE 6)&(lte IE 8)]>
-			<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/libs/selectivizr-min.js"></script>
-			<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/libs/modernizr-2.5.1-min.js"></script>
+			<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs/selectivizr-min.js"></script>
+			<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr-2.5.1-min.js"></script>
         <![endif]-->			
 
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
