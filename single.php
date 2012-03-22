@@ -2,7 +2,7 @@
 <div class="well" role="main">
     <?php
     if (have_posts()) : while (have_posts()) : the_post();
-            get_template_part('post-loop');
+            get_template_part('tmpl/post-loop');
             wp_link_pages($args);
             comments_template();
         endwhile;

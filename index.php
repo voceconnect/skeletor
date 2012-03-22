@@ -4,7 +4,7 @@
 
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
-            <?php get_template_part('post-loop'); ?>
+            <?php get_template_part('tmpl/post-loop'); ?>
         <?php endwhile; ?>
 
         <div class="navigation">
