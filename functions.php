@@ -61,11 +61,11 @@ function voce_theme_enqueue_scripts() {
     $template_dir = get_template_directory_uri();
     if (!is_admin()) {
         wp_enqueue_script('jquery');
-        wp_enqueue_script('main', $template_dir . '/js/script.js', 'jquery', false, true);
+        wp_enqueue_script('main', $template_dir . '/js/script.js', array('jquery'), false, true);
     }
 }
 
-add_action('wp_enqueue_scripts', 'voce_theme_enqueue_scripts', null, null, true);
+add_action('wp_enqueue_scripts', 'voce_theme_enqueue_scripts');
 
 
 //plugin includes
