@@ -1,4 +1,4 @@
-jQuery(document).ready(function(){
+jQuery(document).ready(function($){
 
 	//Clear the text in the search box on focus
 	var default_value = jQuery('#s').val();
