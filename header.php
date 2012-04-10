@@ -12,8 +12,6 @@
 
 		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
 		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico"/>
-		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/img/voce_appletouch.png"/>
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
         <!--[if (gte IE 6)&(lte IE 8)]>
 			<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs/selectivizr-min.js"></script>
