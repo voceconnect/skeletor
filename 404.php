@@ -1,11 +1,11 @@
-<?php get_header();?>
+<?php get_header(); ?>
 
-	<div class="well">
+<div class="well">
 
-		<h1 class="pagetitle"><?php _e('Error 404 - Page Not Found', 'skeletor');?></h1>
+    <?php get_template_part( 'tmpl/post-empty' ); ?>
 
-	</div> <!-- end well -->
+</div> <!-- end well -->
 
-<?php get_sidebar(); ?>
-
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();
