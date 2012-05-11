@@ -20,8 +20,10 @@ if( !class_exists( 'Menu_Collapse' ) ) {
                             display: block !important;
                             left: 0px;
                             position: absolute;
-                            margin: -25px 0 0 420px;
-                            cursor: pointer;}
+                            margin: -35px 0 0 415px;
+                            cursor: pointer;
+                            padding: 10px;
+                            }
                 </style>";
         }
 
