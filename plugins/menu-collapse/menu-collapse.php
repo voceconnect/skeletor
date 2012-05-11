@@ -17,7 +17,7 @@ if( !class_exists( 'Menu_Collapse' ) ) {
         public static function action_admin_print_styles() {
             echo "<style>
                 a.toggler { float: left;
-                            display: block;
+                            display: block !important;
                             left: 0px;
                             position: absolute;
                             margin: -25px 0 0 420px;
