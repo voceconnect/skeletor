@@ -15,12 +15,20 @@ $.fn.menuCollapse = (o)->
   # methods
   m =
     init: () ->
-      m.destroy() # allow only one instance
+      m.destroy() # remove old togglers and bindings
       $("#{s.menuListItem}").each (index, element) =>
+        prevLI    = $(element).prev 'li'
+        nextLI    = $(element).next 'li'
         thisDepth = m.getDepth $(element)
-        nextDepth = m.getDepth($(element).next 'li' )
+        nextDepth = m.getDepth nextLI
+        prevDepth = m.getDepth prevLI
+        togglerSelector = "#{s.togglerElem}.#{s.togglerClass}"
         if thisDepth < nextDepth and nextDepth isnt false
           m.addToggler $(element) # add buttons to all LI elements that have children
+        else if thisDepth > nextDepth or thisDepth == nextDepth or nextDepth is false
+          m.destroy(nextLI.find(togglerSelector))
+        else if thisDepth > prevDepth or thisDepth == prevDepth or prevDepth is false
+          m.destroy(prevLI.find(togglerSelector))
       $("#{s.togglerElem}.#{s.togglerClass}").bind('click', m.clickEvent)
       this
 
@@ -60,23 +68,22 @@ $.fn.menuCollapse = (o)->
     # return the state (open/closed) for the toggler
     getState : (el) ->
       if typeof el isnt undefined
-        el.attr('rel')
+        $(el).attr('rel') if typeof $(el).attr('rel') isnt undefined
       else
         false
           
-    # change the status and symbol of the toggler    
+    # change the status and symbol of the toggler and return it's new state   
     switchToggler : (el, state) ->
       el.attr('rel', 'closed').text "#{s.closedSymbol}" if state == 'open'
       el.attr('rel', 'open').text "#{s.openSymbol}" if state == 'closed'
-      false
+      el.attr('rel')
 
     # event handler on click toggle
-    clickEvent : (e) ->
-      e.preventDefault()
-      state = m.getState($(@))
+    clickEvent : (event) ->
+      event.preventDefault()
+      state = m.getState(this)
       if state == 'open'
         m.getChildren($(@), true).slideUp s.speed # close all children
-        m.switchToggler($(@), state)
       else if state == 'closed'
         # re-open all of the children of this element if they were previously open
         m.getChildren($(@), true).each (index, element) =>
@@ -84,10 +91,8 @@ $.fn.menuCollapse = (o)->
           if m.getState(toggler) == 'open'
             m.getChildren(toggler).slideDown("#{s.speed / 2 }")
         m.getChildren($(@)).slideDown s.speed
-        m.switchToggler($(@), state) 
-      else
-        false
-        
+      m.switchToggler($(@), state) 
+
     # remove togglers and unbind events
     destroy : (el = null) ->
       el = $("#{s.togglerElem}.#{s.togglerClass}") if el is null
@@ -102,6 +107,6 @@ $(document).ready ->
   # collapse all of the child items on page load
   $("#{menuCollapse.togglerElem}.#{menuCollapse.togglerClass}").click()
   # reset when the menu is updated via sortable
-  $('ul.menu').bind('sortupdate', () -> 
-    #setTimeout("jQuery().menuCollapse()", 250)
+  $('ul.menu').bind('sortstop', () -> 
+    setTimeout("jQuery().menuCollapse()", 500)
     )

@@ -20,11 +20,19 @@
         var _this = this;
         m.destroy();
         $("" + s.menuListItem).each(function(index, element) {
-          var nextDepth, thisDepth;
+          var nextDepth, nextLI, prevDepth, prevLI, thisDepth, togglerSelector;
+          prevLI = $(element).prev('li');
+          nextLI = $(element).next('li');
           thisDepth = m.getDepth($(element));
-          nextDepth = m.getDepth($(element).next('li'));
+          nextDepth = m.getDepth(nextLI);
+          prevDepth = m.getDepth(prevLI);
+          togglerSelector = "" + s.togglerElem + "." + s.togglerClass;
           if (thisDepth < nextDepth && nextDepth !== false) {
             return m.addToggler($(element));
+          } else if (thisDepth > nextDepth || thisDepth === nextDepth || nextDepth === false) {
+            return m.destroy(nextLI.find(togglerSelector));
+          } else if (thisDepth > prevDepth || thisDepth === prevDepth || prevDepth === false) {
+            return m.destroy(prevLI.find(togglerSelector));
           }
         });
         $("" + s.togglerElem + "." + s.togglerClass).bind('click', m.clickEvent);
@@ -79,7 +87,9 @@
       },
       getState: function(el) {
         if (typeof el !== void 0) {
-          return el.attr('rel');
+          if (typeof $(el).attr('rel') !== void 0) {
+            return $(el).attr('rel');
+          }
         } else {
           return false;
         }
@@ -91,16 +101,15 @@
         if (state === 'closed') {
           el.attr('rel', 'open').text("" + s.openSymbol);
         }
-        return false;
+        return el.attr('rel');
       },
-      clickEvent: function(e) {
+      clickEvent: function(event) {
         var state,
           _this = this;
-        e.preventDefault();
-        state = m.getState($(this));
+        event.preventDefault();
+        state = m.getState(this);
         if (state === 'open') {
           m.getChildren($(this), true).slideUp(s.speed);
-          return m.switchToggler($(this), state);
         } else if (state === 'closed') {
           m.getChildren($(this), true).each(function(index, element) {
             var toggler;
@@ -110,10 +119,8 @@
             }
           });
           m.getChildren($(this)).slideDown(s.speed);
-          return m.switchToggler($(this), state);
-        } else {
-          return false;
         }
+        return m.switchToggler($(this), state);
       },
       destroy: function(el) {
         if (el == null) {
@@ -133,7 +140,9 @@
     var menuCollapse;
     menuCollapse = $().menuCollapse();
     $("" + menuCollapse.togglerElem + "." + menuCollapse.togglerClass).click();
-    return $('ul.menu').bind('sortupdate', function() {});
+    return $('ul.menu').bind('sortstop', function() {
+      return setTimeout("jQuery().menuCollapse()", 500);
+    });
   });
 
 }).call(this);
