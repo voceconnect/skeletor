@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Add JS and CSS to more easily manage WP Nav Menu UI 
+ */
 if( !class_exists( 'Menu_Collapse' ) ) {
 
     class Menu_Collapse {
