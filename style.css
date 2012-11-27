@@ -1,250 +1,226 @@
 /*
-Theme Name: Voce
-Theme URI: http://vocecommunications.com
-Description: The custom WordPress theme developed by Voce Connect.
-Version: 1.0
-Author: Voce Connect
-Author URI: http://vocecommunications.com
-License: GNU General Public License
-License URI: license.txt
-Tags: two-columns, right-sidebar, fixed-width
-
+* Bootstrap v2.1.1
+*
+* Copyright 2012 Twitter,Inc
+* Licensed under the Apache License v2.0
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Designed and built with all the love in the world @twitter by @mdo and @fat.
 */
-/* line 1, sass/_reset.scss */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+/* line 11, sass/style.scss */
+.close { float: right; font-size: 20px; font-weight: bold; line-height: 20px; color: #000; text-shadow: 0 1px 0 #fff; opacity: 0.2; filter: alpha(opacity=20); }
 
-/* line 2, sass/_reset.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+/* line 12, sass/style.scss */
+.close:hover { color: #000000; text-decoration: none; cursor: pointer; opacity: 0.4; filter: alpha(opacity=40); }
 
-/* line 3, sass/_reset.scss */
+/* line 13, sass/style.scss */
+button.close { padding: 0; cursor: pointer; background: transparent; border: 0; -webkit-appearance: none; }
+
+/* line 14, sass/style.scss */
+.pull-right { float: right; }
+
+/* line 15, sass/style.scss */
+.pull-left { float: left; }
+
+/* line 16, sass/style.scss */
+.hide { display: none; }
+
+/* line 17, sass/style.scss */
+.show { display: block; }
+
+/* line 18, sass/style.scss */
+.invisible { visibility: hidden; }
+
+/* line 19, sass/style.scss */
+.affix { position: fixed; }
+
+/* line 20, sass/style.scss */
+.fade { opacity: 0; -webkit-transition: opacity 0.15s linear; -moz-transition: opacity 0.15s linear; -o-transition: opacity 0.15s linear; transition: opacity 0.15s linear; }
+
+/* line 21, sass/style.scss */
+.fade.in { opacity: 1; }
+
+/* line 22, sass/style.scss */
+.collapse { position: relative; height: 0; overflow: hidden; -webkit-transition: height 0.35s ease; -moz-transition: height 0.35s ease; -o-transition: height 0.35s ease; transition: height 0.35s ease; }
+
+/* line 23, sass/style.scss */
+.collapse.in { height: auto; }
+
+/* line 24, sass/style.scss */
+.hidden { display: none; visibility: hidden; }
+
+/* line 1, sass/_bootstrap-reset.scss */
+.clearfix { *zoom: 1; }
+
+/* line 3, sass/_bootstrap-reset.scss */
+.clearfix:before, .clearfix:after { display: table; content: ""; line-height: 0; }
+
+/* line 4, sass/_bootstrap-reset.scss */
+.clearfix:after { clear: both; }
+
+/* line 5, sass/_bootstrap-reset.scss */
+.hide-text { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
+
+/* line 6, sass/_bootstrap-reset.scss */
+.input-block-level { display: block; width: 100%; min-height: 30px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/* line 7, sass/_bootstrap-reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+
+/* line 8, sass/_bootstrap-reset.scss */
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+/* line 9, sass/_bootstrap-reset.scss */
+audio:not([controls]) { display: none; }
+
+/* line 10, sass/_bootstrap-reset.scss */
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-/* line 4, sass/_reset.scss */
-body { line-height: 1; font-size: 13px; line-height: 1.231; }
+/* line 11, sass/_bootstrap-reset.scss */
+a:focus { outline: thin dotted #333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
 
-/* line 5, sass/_reset.scss */
-:focus { outline: 3px solid #999; }
-
-/* line 6, sass/_reset.scss */
-body, button, input, select, textarea { font-family: sans-serif; color: #222; }
-
-/* ========== Typography and Other Standard Items =========== */
-/* line 8, sass/_reset.scss */
-ol, ul { list-style: none; }
-
-/* line 9, sass/_reset.scss */
-ins { text-decoration: none; }
-
-/* line 10, sass/_reset.scss */
-del { text-decoration: line-through; }
-
-/* line 11, sass/_reset.scss */
-a { color: #00e; text-decoration: underline; }
-
-/* line 12, sass/_reset.scss */
-a:hover { color: #06e; text-decoration: none; }
-
-/* line 13, sass/_reset.scss */
-a:focus { outline: thin dotted; }
-
-/* line 14, sass/_reset.scss */
+/* line 12, sass/_bootstrap-reset.scss */
 a:hover, a:active { outline: 0; }
 
-/* line 15, sass/_reset.scss */
-abbr[title] { border-bottom: 1px dotted; }
+/* line 13, sass/_bootstrap-reset.scss */
+sub, sup { position: relative; font-size: 75%; line-height: 0; vertical-align: baseline; }
 
-/* line 16, sass/_reset.scss */
-b, strong { font-weight: bold; }
-
-/* line 17, sass/_reset.scss */
-em, i { font-style: italic; }
-
-/* line 18, sass/_reset.scss */
-hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
-
-/* line 19, sass/_reset.scss */
-mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
-
-/* line 20, sass/_reset.scss */
-pre, code, kbd, samp { font-family: 'courier new', monospace; font-size: 1em; }
-
-/* line 21, sass/_reset.scss */
-pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-
-/* line 22, sass/_reset.scss */
-small { font-size: 85%; }
-
-/* line 23, sass/_reset.scss */
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
-
-/* line 24, sass/_reset.scss */
+/* line 14, sass/_bootstrap-reset.scss */
 sup { top: -0.5em; }
 
-/* line 25, sass/_reset.scss */
+/* line 15, sass/_bootstrap-reset.scss */
 sub { bottom: -0.25em; }
 
-/* line 26, sass/_reset.scss */
-table { border-collapse: collapse; border-spacing: 0; }
+/* line 16, sass/_bootstrap-reset.scss */
+img { max-width: 100%; width: auto\9; /* IE7-8 need help adjusting responsive images */ height: auto; /* Part 2:Scale the height according to the width,otherwise you get stretching */ vertical-align: middle; border: 0; -ms-interpolation-mode: bicubic; }
 
-/* line 27, sass/_reset.scss */
-th { font-weight: bold; }
+/* line 18, sass/_bootstrap-reset.scss */
+#map_canvas img { max-width: none; }
 
-/* line 28, sass/_reset.scss */
-td { vertical-align: top; }
+/* line 19, sass/_bootstrap-reset.scss */
+button, input, select, textarea { margin: 0; font-size: 100%; vertical-align: middle; }
 
-/* line 29, sass/_reset.scss */
-img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; display: block; }
+/* line 20, sass/_bootstrap-reset.scss */
+button, input { *overflow: visible; line-height: normal; }
 
-/* line 30, sass/_reset.scss */
-button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; }
+/* line 21, sass/_bootstrap-reset.scss */
+button::-moz-focus-inner, input::-moz-focus-inner { padding: 0; border: 0; }
 
-/* line 31, sass/_reset.scss */
-button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; }
+/* line 23, sass/_bootstrap-reset.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
 
-/* line 32, sass/_reset.scss */
-textarea { overflow: auto; vertical-align: top; resize: vertical; }
+/* line 24, sass/_bootstrap-reset.scss */
+input[type="search"] { -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; -webkit-appearance: textfield; }
 
-/* line 33, sass/_reset.scss */
-input:invalid, textarea:invalid { background-color: #f0dddd; }
+/* line 25, sass/_bootstrap-reset.scss */
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 
-/* line 34, sass/_reset.scss */
-blockquote { margin: 15px 20px 0 20px; padding: 0 12px 12px 12px; quotes: none; }
+/* line 26, sass/_bootstrap-reset.scss */
+textarea { overflow: auto; vertical-align: top; }
 
-/* line 35, sass/_reset.scss */
-blockquote:before, blockquote:after { content: ''; content: none; }
+/* line 27, sass/_bootstrap-reset.scss */
+body { margin: 0; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px; line-height: 20px; color: #333; background-color: #fff; }
 
-/* line 36, sass/_reset.scss */
-img.wp-smiley { display: inline; vertical-align: middle; }
+/* line 28, sass/_bootstrap-reset.scss */
+a { color: #0088cc; text-decoration: none; }
 
-/* line 37, sass/_reset.scss */
-.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+/* line 29, sass/_bootstrap-reset.scss */
+a:hover { color: #005580; text-decoration: underline; }
 
-/*========================= Begin custom styles =====================*/
-/* line 23, sass/style.scss */
-h1 { padding-top: 20px; font-family: Arial; font-size: 30px; line-height: 33px; color: #3e3e3e; }
+/* line 1, sass/_bootstrap-grid.scss */
+.row { margin-left: -20px; *zoom: 1; }
+/* line 2, sass/_bootstrap-grid.scss */
+.row:before, .row:after { display: table; content: ""; line-height: 0; }
+/* line 3, sass/_bootstrap-grid.scss */
+.row:after { clear: both; }
 
-/* line 24, sass/style.scss */
-h1 + p { padding-top: 10px; }
+/* line 5, sass/_bootstrap-grid.scss */
+[class*="span"] { float: left; min-height: 1px; margin-left: 20px; }
 
-/* line 23, sass/style.scss */
-h2 { padding-top: 20px; font-family: Arial; font-size: 27.5px; line-height: 30.25px; color: #3e3e3e; }
+/* line 6, sass/_bootstrap-grid.scss */
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container { width: 940px; }
 
-/* line 24, sass/style.scss */
-h2 + p { padding-top: 10px; }
+/* line 7, sass/_bootstrap-grid.scss */
+.span12 { width: 940px; }
 
-/* line 23, sass/style.scss */
-h3 { padding-top: 20px; font-family: Arial; font-size: 25px; line-height: 27.5px; color: #3e3e3e; }
+/* line 8, sass/_bootstrap-grid.scss */
+.span11 { width: 860px; }
 
-/* line 24, sass/style.scss */
-h3 + p { padding-top: 10px; }
+/* line 9, sass/_bootstrap-grid.scss */
+.span10 { width: 780px; }
 
-/* line 23, sass/style.scss */
-h4 { padding-top: 20px; font-family: Arial; font-size: 22.5px; line-height: 24.75px; color: #3e3e3e; }
+/* line 10, sass/_bootstrap-grid.scss */
+.span9 { width: 700px; }
 
-/* line 24, sass/style.scss */
-h4 + p { padding-top: 10px; }
+/* line 11, sass/_bootstrap-grid.scss */
+.span8 { width: 620px; }
 
-/* line 23, sass/style.scss */
-h5 { padding-top: 20px; font-family: Arial; font-size: 20px; line-height: 22px; color: #3e3e3e; }
+/* line 12, sass/_bootstrap-grid.scss */
+.span7 { width: 540px; }
 
-/* line 24, sass/style.scss */
-h5 + p { padding-top: 10px; }
+/* line 13, sass/_bootstrap-grid.scss */
+.span6 { width: 460px; }
 
-/* line 27, sass/style.scss */
-.sprite { background: url(..img/sprite.gif) no-repeat; }
+/* line 14, sass/_bootstrap-grid.scss */
+.span5 { width: 380px; }
 
-/* main container, almost always centered */
-/* line 34, sass/style.scss */
-#container { margin: 0 auto; text-align: left; width: 980px; font-size: 12px; font-family: Arial, Helvetica, sans-serif; }
+/* line 15, sass/_bootstrap-grid.scss */
+.span4 { width: 300px; }
 
-/* top section, usually included in the header.php */
-/* cols is made up of .well and .sidebar */
-/* well is the middle area */
-/* line 45, sass/style.scss */
-.post-entry { font-size: 12px; }
-/* line 47, sass/style.scss */
-.post-entry h1, .post-entry h2, .post-entry h3, .post-entry h4, .post-entry h5 { padding-top: 18px; }
-/* line 48, sass/style.scss */
-.post-entry h1.pagetitle { padding-top: 0; }
-/* line 49, sass/style.scss */
-.post-entry ul, .post-entry .post-entry ol { margin: 15px 0 0 25px; }
-/* line 50, sass/style.scss */
-.post-entry ul { list-style: disc; }
-/* line 51, sass/style.scss */
-.post-entry form { margin-top: 15px; }
-/* line 52, sass/style.scss */
-.post-entry p { padding-top: 15px; }
-/* line 53, sass/style.scss */
-.post-entry input { font: 12px Arial; }
-/* line 54, sass/style.scss */
-.post-entry img.alignright, .post-entry img.alignleft, .post-entry img.aligncenter { margin-top: 10px; margin-bottom: 10px; }
-/* line 55, sass/style.scss */
-.post-entry img.alignright { margin-left: 15px; }
-/* line 56, sass/style.scss */
-.post-entry img.alignleft { margin-right: 15px; }
-/* line 57, sass/style.scss */
-.post-entry table { margin-top: 15px; }
-/* line 58, sass/style.scss */
-.post-entry th { padding: 10px 8px 8px 8px; }
-/* line 59, sass/style.scss */
-.post-entry td { padding: 8px; }
+/* line 16, sass/_bootstrap-grid.scss */
+.span3 { width: 220px; }
 
-/* sidebar styles */
-/* footer styles in here */
-/* ======== end custom styles ================ */
-/* line 69, sass/style.scss */
-.no-border { border: none; }
+/* line 17, sass/_bootstrap-grid.scss */
+.span2 { width: 140px; }
 
-/* line 70, sass/style.scss */
-.no-bg { background: none; }
+/* line 18, sass/_bootstrap-grid.scss */
+.span1 { width: 60px; }
 
-/* line 71, sass/style.scss */
-.no-margin { margin: 0; }
+/* line 19, sass/_bootstrap-grid.scss */
+.offset12 { margin-left: 980px; }
 
-/* line 72, sass/style.scss */
-.no-padding { padding: 0; }
+/* line 20, sass/_bootstrap-grid.scss */
+.offset11 { margin-left: 900px; }
 
-/* line 73, sass/style.scss */
-.inline { display: inline; }
+/* line 21, sass/_bootstrap-grid.scss */
+.offset10 { margin-left: 820px; }
 
-/* line 74, sass/style.scss */
-.clr { clear: both; height: 0px; overflow: hidden; }
+/* line 22, sass/_bootstrap-grid.scss */
+.offset9 { margin-left: 740px; }
 
-/* line 75, sass/style.scss */
-.hidden { display: none !important; visibility: hidden; }
+/* line 23, sass/_bootstrap-grid.scss */
+.offset8 { margin-left: 660px; }
 
-/* line 76, sass/style.scss */
-.alignright { float: right; display: inline; }
+/* line 24, sass/_bootstrap-grid.scss */
+.offset7 { margin-left: 580px; }
 
-/* line 77, sass/style.scss */
-.alignleft { float: left; display: inline; }
+/* line 25, sass/_bootstrap-grid.scss */
+.offset6 { margin-left: 500px; }
 
-/* line 78, sass/style.scss */
-.aligncenter { margin: 0 auto; text-align: center; }
+/* line 26, sass/_bootstrap-grid.scss */
+.offset5 { margin-left: 420px; }
 
-@media print { /* line 2, sass/_prints.scss */
-  * { background: transparent !important; color: black !important; box-shadow: none !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
-  /* Black prints faster: h5bp.com/s */
-  /* line 3, sass/_prints.scss */
-  a, a:visited { text-decoration: underline; }
-  /* line 4, sass/_prints.scss */
-  a[href]:after { content: " (" attr(href) ")"; }
-  /* line 5, sass/_prints.scss */
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  /* line 6, sass/_prints.scss */
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
-  /* Don't show links for images, or javascript/internal links */
-  /* line 7, sass/_prints.scss */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  /* line 8, sass/_prints.scss */
-  thead { display: table-header-group; }
-  /* h5bp.com/t */
-  /* line 9, sass/_prints.scss */
-  tr, img { page-break-inside: avoid; }
-  /* line 10, sass/_prints.scss */
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  /* line 12, sass/_prints.scss */
-  p, h2, h3 { orphans: 3; widows: 3; }
-  /* line 13, sass/_prints.scss */
-  h2, h3 { page-break-after: avoid; } }
+/* line 27, sass/_bootstrap-grid.scss */
+.offset4 { margin-left: 340px; }
+
+/* line 28, sass/_bootstrap-grid.scss */
+.offset3 { margin-left: 260px; }
+
+/* line 29, sass/_bootstrap-grid.scss */
+.offset2 { margin-left: 180px; }
+
+/* line 30, sass/_bootstrap-grid.scss */
+.offset1 { margin-left: 100px; }
+
+/* line 31, sass/_bootstrap-grid.scss */
+[class*="span"].hide { display: none; }
+
+/* line 32, sass/_bootstrap-grid.scss */
+[class*="span"].pull-right { float: right; }
+
+/* line 33, sass/_bootstrap-grid.scss */
+.container { margin-right: auto; margin-left: auto; *zoom: 1; }
+/* line 34, sass/_bootstrap-grid.scss */
+.container:before, .container:after { display: table; content: ""; line-height: 0; }
+/* line 35, sass/_bootstrap-grid.scss */
+.container:after { clear: both; }

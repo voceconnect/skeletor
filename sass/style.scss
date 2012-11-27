@@ -1,80 +1,50 @@
-/*
-Theme Name: Voce
-Theme URI: http://vocecommunications.com
-Description: The custom WordPress theme developed by Voce Connect.
-Version: 1.0
-Author: Voce Connect
-Author URI: http://vocecommunications.com
-License: GNU General Public License
-License URI: license.txt
-Tags: two-columns, right-sidebar, fixed-width
-
+/*!
+* Bootstrap v2.1.1
+*
+* Copyright 2012 Twitter,Inc
+* Licensed under the Apache License v2.0
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Designed and built with all the love in the world @twitter by @mdo and @fat.
 */
-
 @import "compass";
-@import "reset";
-$fullwidth: 980px;
-
-/*========================= Begin custom styles =====================*/
-body {}
-
-@mixin font-style($amount) {font-size: $amount;line-height: ($amount * 1.1);}
-@for $level from 0 to 5 {
-	h#{$level + 1} {padding-top: 20px; font-family: Arial; @include font-style(30px - ($level * 2.5px)); color: #3e3e3e;}
-	h#{$level + 1} + p {padding-top: 10px;}
-}		
-
-.sprite {background: url(..img/sprite.gif) no-repeat;}
-.wp-caption {}
-.wp-caption-text{}
-.gallery-caption {}
-.bypostauthor {}
-
-/* main container, almost always centered */
-#container {margin: 0 auto; text-align: left; width: $fullwidth; font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
-
-/* top section, usually included in the header.php */
-header {}
-nav {}
-	
-/* cols is made up of .well and .sidebar */
-#main {}
-
-/* well is the middle area */
-.well {}
-.post-entry {
-	font-size: 12px;
-	h1, h2, h3, h4, h5 {padding-top: 18px;}
-	h1.pagetitle {padding-top: 0;}
-	ul, .post-entry ol {margin: 15px 0 0 25px;}
-	ul {list-style: disc;}
-	form {margin-top: 15px;}
-	p {padding-top: 15px;}
-	input, {font: 12px Arial;}
-	img.alignright, img.alignleft, img.aligncenter {margin-top: 10px; margin-bottom: 10px;}
-	img.alignright {margin-left: 15px;}
-	img.alignleft {margin-right: 15px;}
-	table {margin-top: 15px;}
-	th {padding: 10px 8px 8px 8px;}
-	td {padding: 8px;}
-}
-
-/* sidebar styles */
-.sidebar {}
-
-/* footer styles in here */
-footer {}
-
-/* ======== end custom styles ================ */
-.no-border {border: none;}
-.no-bg {background: none;}
-.no-margin {margin: 0;}
-.no-padding {padding: 0;}
-.inline {display: inline;}
-.clr {clear: both; height: 0px; overflow: hidden;}
-.hidden { display: none !important; visibility: hidden;}
-.alignright {float: right; display: inline;}
-.alignleft {float: left; display: inline;}
-.aligncenter {margin: 0 auto; text-align: center;}
-
-@import "prints";
+.close{float:right;font-size:20px;font-weight:bold;line-height:20px;color:#000;text-shadow:0 1px 0 #fff;opacity:0.2;filter:alpha(opacity=20);}
+.close:hover{color:#000000;text-decoration:none;cursor:pointer;opacity:0.4;filter:alpha(opacity=40);}
+button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-appearance:none;}
+.pull-right{float:right;}
+.pull-left{float:left;}
+.hide{display:none;}
+.show{display:block;}
+.invisible{visibility:hidden;}
+.affix{position:fixed;}
+.fade{opacity:0;-webkit-transition:opacity 0.15s linear;-moz-transition:opacity 0.15s linear;-o-transition:opacity 0.15s linear;transition:opacity 0.15s linear;}
+.fade.in{opacity:1;}
+.collapse{position:relative;height:0;overflow:hidden;-webkit-transition:height 0.35s ease;-moz-transition:height 0.35s ease;-o-transition:height 0.35s ease;transition:height 0.35s ease;}
+.collapse.in{height:auto;}
+.hidden{display:none;visibility:hidden;}
+@import "bootstrap-reset";
+@import "bootstrap-grid";
+//@import "bootstrap-grid-fluid";
+//@import "bootstrap-content";
+//@import "bootstrap-labels-badges";
+//@import "bootstrap-tables";
+//@import "bootstrap-forms";
+//@import "bootstrap-buttons";
+//@import "bootstrap-icons";
+//@import "bootstrap-button-group";
+//@import "bootstrap-nav";
+//@import "bootstrap-tabs";
+//@import "bootstrap-navbar";
+//@import "bootstrap-breadcrumbs";
+//@import "bootstrap-pagination";
+//@import "bootstrap-thumbnails";
+//@import "bootstrap-alerts";
+//@import "bootstrap-progress";
+//@import "bootstrap-tooltip";
+//@import "bootstrap-popover";
+//@import "bootstrap-modal";
+//@import "bootstrap-dropdown";
+//@import "bootstrap-accordion";
+//@import "bootstrap-carousel";
+//@import "responsive-base";
+//@import "responsive-min-1200";

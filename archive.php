@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="well" role="main">
+<div class="span8 well" role="main">
 
     <?php if( have_posts() ) : ?>
 
