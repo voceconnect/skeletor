@@ -1,0 +1,11 @@
+@mixin font-style($amount) {font-size: $amount;line-height: ($amount * 1.1);}
+@for $level from 0 to 5 {
+	h#{$level + 1} {padding-top: 20px; font-family: Arial; @include font-style(2.25em - ($level * .25em)); color: #3e3e3e;}
+	h#{$level + 1} + p {padding-top: 10px;}
+}
+@mixin sprite($width, $height, $posT, $posL) {
+	display:inline-block;background:url(../img/sprite-icons.png) $posT $posL;width:$width;height:$height;text-indent:-9999px;
+}
+@mixin after($width, $height, $posT, $posL, $top, $left) {
+	content:'';position:absolute;top:$top;left:$left;@include sprite($width,$height,$posT,$posL);
+} // example: a:after {@include after(8px, 4px, -6px, -68px, 10px, 100%);}

@@ -1,7 +1,5 @@
 <?php get_header(); ?>
-
-<div class="well" role="main">
-
+	<div class="span8 well" role="main">
     <?php
     if( have_posts() ) :
         while( have_posts() ) : the_post();
@@ -12,7 +10,7 @@
         get_template_part( 'tmpl/post-empty' );
     endif;
     ?>
-</div> <!-- end well -->
+	</div> <!-- end well -->
 
 <?php
 get_sidebar();
