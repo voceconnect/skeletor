@@ -28,8 +28,8 @@
     </head>
 
     <body <?php body_class(); ?>>
-        <div id="container">
-            <header>
+        <div class="container">
+            <header class="row">
 
             </header>
-            <div id="main">
+			<div class="row cols">
