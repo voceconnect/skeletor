@@ -13,9 +13,9 @@
 		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr-2.6.2-min.js"></script>
         <!--[if (gte IE 6)&(lte IE 8)]>
             <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs/selectivizr-min.js"></script>
-            <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr-2.5.1-min.js"></script>
         <![endif]-->			
 
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -29,7 +29,7 @@
 
     <body <?php body_class(); ?>>
         <div class="container">
-            <header class="row">
-
+            <header class="row" role="banner">
+				<nav role="navigation"></nav>
             </header>
 			<div class="row cols">
