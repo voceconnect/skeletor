@@ -2,14 +2,14 @@
 .htaccess
 .htpasswd
 /config
-/Capfile<F6>
+/Capfile
 .DS_Store
 Thumbs.db
 sitemap.xml*
 .sass-cache
 /nbproject
 
-# vip files<F6>
+# vip files
 REVISION
 .svn
 wp-content/themes/vip
@@ -41,7 +41,7 @@ wp-content/themes/vip
 /wp-pass.php
 /wp-rdf.php
 /wp-register.php
-/wp-rss.php<F6>
+/wp-rss.php
 /wp-rss2.php
 /wp-settings.php
 /wp-trackback.php
@@ -66,9 +66,10 @@ wp-content/themes/vip
 /wp-content/object-cache.php
 /wp-content/wp-cache-config.php
 
-# 3.0 files<F6>
-/wp-content/them<F6>es/twentyeleven
-/wp-content/<F6>themes/twentyten
-/wp-cont<F6>ent/plugins/hello.php
-/wp-<F6>content/themes/index.php
-<F6>/wp-content/plugins/index.php
+# 3.0 files
+/wp-content/themes/twentytwelve
+/wp-content/themes/twentyeleven
+/wp-content/themes/twentyten
+/wp-content/plugins/hello.php
+/wp-content/themes/index.php
+/wp-content/plugins/index.php
