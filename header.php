@@ -5,31 +5,20 @@
 <!--[if gt IE 8]><!--> <html class="no-js"  <?php language_attributes(); ?>> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-
         <title><?php wp_title( '&laquo;', true, 'right' ); ?> <?php bloginfo( 'name' ); ?></title>
         <meta name="description" content="<?php bloginfo( 'description' ); ?>">
-        <meta name="author" content="">
-
-		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
-		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css">
         <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr-2.6.2-min.js"></script>
         <!--[if (gte IE 6)&(lte IE 8)]>
             <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs/selectivizr-min.js"></script>
         <![endif]-->			
-
-        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-        <?php if( is_singular() )
-            wp_enqueue_script( 'comment-reply' );
-        ?>
-
-<?php wp_head(); ?>
+		<?php wp_head(); ?>
     </head>
 
     <body <?php body_class(); ?>>
-        <div class="container">
-            <header class="row" role="banner">
-				<nav role="navigation"></nav>
-            </header>
-			<div class="row cols">
+		<header class="row" role="banner">
+			<div class="container">
+				<nav role="navigation"><a href="/">Home</a></nav>
+			</div>
+		</header>

@@ -1,8 +1,6 @@
-	</div> <!-- end cols -->
-	<footer class="row" role="contentinfo">
+<footer class="row" role="contentinfo">
 
-	</footer>
-</div> <!-- end container -->
+</footer>
 <?php wp_footer(); ?>
 
 </body>
