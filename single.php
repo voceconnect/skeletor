@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="span8 well" role="main">
+<section class="row" role="main">
     <?php
     if( have_posts() ) : while( have_posts() ) : the_post();
             get_template_part( 'tmpl/post-loop' );
@@ -10,8 +10,8 @@
         ?>
         <h1>Sorry, no posts matched your criteria.</h1>
     <?php endif; ?>
-</div> <!-- end well -->
+</section> <!-- end well -->
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();
 
