@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="span8 well" role="main">
+<section class="row" role="main">
 
     <?php if( have_posts() ) : ?>
 
@@ -47,8 +47,8 @@
         get_template_part( 'tmpl/post-empty' );
     endif;
     ?>
-</div> <!-- end well -->
+</section> <!-- end well -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

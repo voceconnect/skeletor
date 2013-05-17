@@ -1,18 +1,18 @@
 <?php get_header(); ?>
-	<div class="span8 well" role="main">
-    <?php
-    if( have_posts() ) :
-        while( have_posts() ) : the_post();
-            get_template_part( 'tmpl/post-loop' );
-        endwhile;
-        get_template_part( 'tmpl/navigation' );
-    else :
-        get_template_part( 'tmpl/post-empty' );
-    endif;
-    ?>
-	</div> <!-- end well -->
+	<section class="row" role="main">
+	    <?php
+	    if( have_posts() ) :
+	        while( have_posts() ) : the_post();
+	            get_template_part( 'tmpl/post-loop' );
+	        endwhile;
+	        get_template_part( 'tmpl/navigation' );
+	    else :
+	        get_template_part( 'tmpl/post-empty' );
+	    endif;
+	    ?>
+	</section>
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();
 
