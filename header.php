@@ -20,6 +20,10 @@
     <body <?php body_class(); ?>>
 		<header class="row" role="banner">
 			<div class="container">
-				<nav role="navigation"><a href="/">Home</a></nav>
+				<nav role="navigation">
+					<ul>
+						<li><a href="/">Home</a></li>
+					</ul>
+				</nav>
 			</div>
 		</header>
