@@ -8,7 +8,7 @@
         <title><?php wp_title( '&laquo;', true, 'right' ); ?> <?php bloginfo( 'name' ); ?></title>
         <meta name="description" content="<?php bloginfo( 'description' ); ?>">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/theme.css">
         <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr-2.6.2-min.js"></script>
         <!--[if (gte IE 6)&(lte IE 8)]>
             <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs/selectivizr-min.js"></script>
@@ -19,11 +19,21 @@
 
     <body <?php body_class(); ?>>
 		<header class="row" role="banner">
-			<div class="container">
-				<nav role="navigation">
-					<ul>
-						<li><a href="/">Home</a></li>
-					</ul>
-				</nav>
-			</div>
+			<div class="navbar navbar-inverse bs-docs-nav">
+				<div class="container">
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand">Project Name</a>
+					<div class="nav-collapse collapse bs-navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="/">Home</a></li>
+							<li><a href="/about">About</a></li>
+							<li><a href="/contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>		
 		</header>

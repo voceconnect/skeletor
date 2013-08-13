@@ -76,22 +76,21 @@ if( !function_exists( 'voce_theme_enqueue_scripts' ) ) {
         if( !is_admin() ) {
             wp_enqueue_script( 'jquery' );
             wp_enqueue_script( 'main', $template_dir . '/js/script.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'affix', $template_dir . '/js/bs3.0.0/bootstrap-affix.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'alert', $template_dir . '/js/bs3.0.0/bootstrap-alert.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'button', $template_dir . '/js/bs3.0.0/bootstrap-button.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'carousel', $template_dir . '/js/bs3.0.0/bootstrap-carousel.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'collapse', $template_dir . '/js/bs3.0.0/bootstrap-collapse.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'dropdown', $template_dir . '/js/bs3.0.0/bootstrap-dropdown.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'modal', $template_dir . '/js/bs3.0.0/bootstrap-modal.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'popover', $template_dir . '/js/bs3.0.0/bootstrap-popover.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'scrollspy', $template_dir . '/js/bs3.0.0/bootstrap-scrollspy.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'tab', $template_dir . '/js/bs3.0.0/bootstrap-tab.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'tooltip', $template_dir . '/js/bs3.0.0/bootstrap-tooltip.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'transition', $template_dir . '/js/bs3.0.0/bootstrap-transition.js', array( 'jquery' ), false, true );
-//            wp_enqueue_script( 'typeahead', $template_dir . '/js/bs3.0.0/bootstrap-typeahead.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'affix', $template_dir . '/js/bootstrap/affix.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'alert', $template_dir . '/js/bootstrap/alert.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'button', $template_dir . '/js/bootstrap/button.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'carousel', $template_dir . '/js/bootstrap/carousel.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'collapse', $template_dir . '/js/bootstrap/collapse.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'dropdown', $template_dir . '/js/bootstrap/dropdown.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'modal', $template_dir . '/js/bootstrap/modal.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'popover', $template_dir . '/js/bootstrap/popover.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'scrollspy', $template_dir . '/js/bootstrap/scrollspy.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'tab', $template_dir . '/js/bootstrap/tab.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'tooltip', $template_dir . '/js/bootstrap/tooltip.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'transition', $template_dir . '/js/bootstrap/transition.js', array( 'jquery' ), false, true );
 
 			// This script is only for cutup and dev phase. COMMENT OUT WHEN SETTING SITE LIVE
-			wp_enqueue_script( 'holder', $template_dir . '/js/bs3.0.0/holder/holder.js', array( 'jquery' ), false, true );
+			wp_enqueue_script( 'holder', $template_dir . '/js/libs/holder.js', array( 'jquery' ), false, true );
         }
     }
 

@@ -1,4 +1,4 @@
-<aside class="col-4" role="complementary">
+<aside class="col-sm-4 col-lg-4" role="complementary">
     <?php
     if( is_home() && is_active_sidebar( 'sidebar-main' ) ) :
         // use sidebar-main if on home page and available

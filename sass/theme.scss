@@ -1,5 +1,10 @@
 @import "compass";
-@import "bs3.0.0/bootstrap";
-//@import "responsive";
+@import "bootstrap/bootstrap";
 @import "fonts";
 
+.page-numbers {
+	@extend .pagination;
+	&:empty {
+		margin: 0;
+	}
+}
