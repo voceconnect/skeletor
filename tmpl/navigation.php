@@ -1,5 +1,14 @@
-<div class="navigation">
-    <div class="alignleft"><?php next_posts_link( __( '&laquo; Older Entries', 'skeletor' ) ) ?></div>
-    <div class="alignright"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'skeletor' ) ) ?></div>
-    <div class="clr"></div>
-</div> <!-- end navigation -->
+<?php
+echo '<div class="text-center">';
+$big = 999999999; // need an unlikely integer
+$args = array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+    'format'       => '?page=%#%',
+    'current'      => max( 1, get_query_var( 'page' ) ),
+	'total' => $wp_query->max_num_pages,
+    'prev_text'    => __('« Previous'),
+    'next_text'    => __('Next »'),
+    'type'         => 'list'
+);
+echo paginate_links( $args ); 
+echo '</div>';
