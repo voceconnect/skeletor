@@ -1,0 +1,10 @@
+@import "compass";
+@import "bootstrap/bootstrap";
+@import "fonts";
+
+.page-numbers {
+	@extend .pagination;
+	&:empty {
+		margin: 0;
+	}
+}
