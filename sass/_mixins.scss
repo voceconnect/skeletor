@@ -15,8 +15,3 @@
     @media (max-width: 767px)  { @content; }
   }
 }
-
-@mixin after($width, $height, $posT, $posL, $top, $left) {
-	content:'';position:absolute;top:$top;left:$left;@include sprite($width,$height,$posT,$posL);
-} // example: a:after {@include after(8px, 4px, -6px, -68px, 10px, 100%);}
-
