@@ -1,0 +1,80 @@
+img,
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+.page-numbers {
+	@extend .pagination;
+	&:empty {
+		margin: 0;
+	}
+}
+.wp-caption {
+	border: 1px solid $lightGray;
+	margin: 0 0 1em 0;
+	max-width: 100%;
+	background: $lighterGray;
+	text-align: center;
+	&.aligncenter {
+		margin-bottom: 1em;
+	}
+	&.alignleft {
+		margin-right: 1em;
+		padding-top: 5px;
+	}
+	&.alignright {
+		margin-left: 1em;
+		padding-top: 5px;
+	}
+	img {
+		margin: 0 auto;
+	}
+}
+.wp-caption-text {
+	text-align: center;
+	margin: 0;
+	padding: 7px 0;
+	font-size: 0.8571428571em;
+	line-height: 1.2;
+	@include box-sizing(border-box);
+}
+.sticky {
+	position: static;
+}
+.gallery-caption {
+	background: transparent;
+	color: $darkGray;
+	padding: 5px;
+	p {
+		margin-bottom: 0;
+	}
+}
+.entry-caption {
+	@extend .gallery-caption;
+}
+.bypostauthor {
+	position: static;
+}
+.alignright {
+	float: right;
+}
+img.alignright {
+	margin: 10px 0 10px 12px;
+}
+.alignleft {
+	float: left;
+}
+img.alignleft {
+	margin: 10px 12px 10px 0;
+}
+.aligncenter {
+	margin: 0 auto;
+	text-align: center;
+}
+img.aligncenter {
+	margin: 10px 0;
+}

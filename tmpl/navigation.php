@@ -6,8 +6,8 @@ $args = array(
     'format'       => '?page=%#%',
     'current'      => max( 1, get_query_var( 'page' ) ),
 	'total' => $wp_query->max_num_pages,
-    'prev_text'    => __('« Previous'),
-    'next_text'    => __('Next »'),
+    'prev_text'    => __('&laquo; Previous', 'skeletor'),
+    'next_text'    => __('Next &raquo;', 'skeletor'),
     'type'         => 'list'
 );
 echo paginate_links( $args ); 

@@ -7,8 +7,14 @@ remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
 remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
 remove_action( 'wp_head', 'wp_generator' );
 add_theme_support( 'automatic-feed-links' );
+add_theme_support( 'custom-background' );
+add_theme_support( 'custom-header' );
 add_theme_support( 'post-thumbnails' );
 add_editor_style( 'css/editor-style.css' );
+
+if ( ! isset( $content_width ) )
+	$content_width = 780;
+
 
 // require all files in the plugins directory
 $plugin_abs_path = dirname( __FILE__ ) . "/plugins/";
@@ -92,6 +98,9 @@ if( !function_exists( 'voce_theme_enqueue_scripts' ) ) {
 			// This script is only for cutup and dev phase. COMMENT OUT WHEN SETTING SITE LIVE
 			wp_enqueue_script( 'holder', $template_dir . '/js/libs/holder.js', array( 'jquery' ), false, true );
         }
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+			wp_enqueue_script( 'comment-reply' );
+
     }
 
     add_action( 'wp_enqueue_scripts', 'voce_theme_enqueue_scripts' );
