@@ -1,0 +1,87 @@
+header {
+	&.navbar {
+		border-radius: 0;
+	}
+	position: relative;
+	.navbar-nav {
+		background: $darkerGray;
+		@include breakpoint(phone){
+			margin: 0;
+			width: 100%;
+		}
+		float: right;
+		& > li {
+			position: relative;
+			a {
+				color: $gray;
+			}
+			@include breakpoint(phone){
+				border-bottom: 1px solid $darkGray;
+			}
+			ul {
+				display: none;
+				min-width: 160px;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: $darkerGray;
+				li {
+					@include box-sizing(border-box);
+					white-space: nowrap;
+					display: block;
+					border-bottom: 1px solid $darkGray;
+					border-top: 1px solid $lightGray;
+					a {
+						display: block;
+						padding: 6px 8px;
+						line-height: 1.1;
+						&:hover {
+							background: #000;
+							color: #fff;
+							text-decoration: none;
+						}
+					}
+					&:first-child {
+						border-top: none;
+					}
+					ul {
+						position: relative;
+						top: 0;
+						background: lighten($darkerGray, 10%);
+						li {
+							&:first-child {
+								border-top: none;
+							}
+							a {
+								padding-left: 14px;
+							}
+							li {
+								border: none;
+								a {
+									padding-left: 24px;
+								}
+							}
+						}
+					}
+				}
+			}
+			&:last-child {
+				ul {
+					left: auto;
+					right: 0;
+				}
+			}
+			&:hover {
+				ul {
+					display: block;
+					@include breakpoint(phone){
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

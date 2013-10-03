@@ -67,10 +67,6 @@ if( !function_exists( 'voce_cache_buster' ) ) {
 
 }
 
-//theme settings & image sizes
-if( !isset( $content_width ) )
-    $content_width = 640;
-
 /**
  * Global theme script enqueing
  *
@@ -106,6 +102,10 @@ if( !function_exists( 'voce_theme_enqueue_scripts' ) ) {
     add_action( 'wp_enqueue_scripts', 'voce_theme_enqueue_scripts' );
 }
 
+register_nav_menus( array(
+	'primary'   => __( 'Primary Menu', 'skeletor' ),
+	'secondary' => __( 'Secondary Menu', 'skeletor' ),
+) );
 
 //sidebars
 if( function_exists( 'register_sidebar' ) ) {

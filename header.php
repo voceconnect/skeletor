@@ -17,23 +17,23 @@
 		<?php wp_head(); ?>
     </head>
 
-    <body <?php body_class(); ?>>
-		<header class="row" role="banner">
-			<div class="navbar navbar-inverse bs-docs-nav">
-				<div class="container">
+    <body <?php body_class('bs-docs-home'); ?>>
+		<header class="navbar navbar-inverse" role="banner">
+			<div class="container">
+				<div class="navbar-header">
 					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
 					<a href="/" class="navbar-brand">Project Name</a>
-					<div class="nav-collapse collapse bs-navbar-collapse">
-						<ul class="nav navbar-nav">
-							<li><a href="/">Home</a></li>
-							<li><a href="/about">About</a></li>
-							<li><a href="/contact">Contact</a></li>
-						</ul>
-					</div>
 				</div>
-			</div>		
+				<?php wp_nav_menu( array(
+					'theme_location' => 'primary',
+					'container' 		=> 'nav',
+					'container_class' 	=> 'nav-collapse bs-navbar-collapse',
+					'menu_class' 		=> '',
+					'items_wrap'      	=> '<ul id="%1$s" class="%2$s nav navbar-nav">%3$s</ul>'
+				) ); ?>
+			</div>
 		</header>
