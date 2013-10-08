@@ -24,11 +24,11 @@ img,
 	}
 	&.alignleft {
 		margin-right: 1em;
-		padding-top: 5px;
+		padding-top: 0.3125em;
 	}
 	&.alignright {
 		margin-left: 1em;
-		padding-top: 5px;
+		padding-top: 0.3125em;
 	}
 	img {
 		margin: 0 auto;
@@ -37,7 +37,7 @@ img,
 .wp-caption-text {
 	text-align: center;
 	margin: 0;
-	padding: 7px 0;
+	padding: 0.4375em 0;
 	font-size: 0.8571428571em;
 	line-height: 1.2;
 	@include box-sizing(border-box);
@@ -48,7 +48,7 @@ img,
 .gallery-caption {
 	background: transparent;
 	color: $darkGray;
-	padding: 5px;
+	padding: 0.3125em;
 	p {
 		margin-bottom: 0;
 	}
@@ -63,18 +63,18 @@ img,
 	float: right;
 }
 img.alignright {
-	margin: 10px 0 10px 12px;
+	margin: .6125em 0 .6125em .75em;
 }
 .alignleft {
 	float: left;
 }
 img.alignleft {
-	margin: 10px 12px 10px 0;
+	margin: 6125em .75em 6125em 0;
 }
 .aligncenter {
 	margin: 0 auto;
 	text-align: center;
 }
 img.aligncenter {
-	margin: 10px 0;
+	margin: .6125em 0;
 }

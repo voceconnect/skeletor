@@ -20,7 +20,7 @@ header {
 			}
 			ul {
 				display: none;
-				min-width: 160px;
+				min-width: 10em;
 				margin: 0;
 				padding: 0;
 				list-style: none;
@@ -36,7 +36,7 @@ header {
 					border-top: 1px solid $lightGray;
 					a {
 						display: block;
-						padding: 6px 8px;
+						padding: .3725em .5em;
 						line-height: 1.1;
 						&:hover {
 							background: #000;
@@ -56,12 +56,12 @@ header {
 								border-top: none;
 							}
 							a {
-								padding-left: 14px;
+								padding-left: 0.875em;
 							}
 							li {
 								border: none;
 								a {
-									padding-left: 24px;
+									padding-left: 1.5em;
 								}
 							}
 						}
