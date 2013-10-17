@@ -31,7 +31,7 @@
 				<?php wp_nav_menu( array(
 					'theme_location' => 'primary',
 					'container' 		=> 'nav',
-					'container_class' 	=> 'navbar-collapse bs-navbar-collapse collapse',
+					'container_class' 	=> 'nav-collapse bs-navbar-collapse',
 					'menu_class' 		=> '',
 					'items_wrap'      	=> '<ul id="%1$s" class="%2$s nav navbar-nav">%3$s</ul>'
 				) ); ?>
