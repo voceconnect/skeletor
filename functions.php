@@ -85,7 +85,7 @@ if( !function_exists( 'voce_theme_enqueue_scripts' ) ) {
             wp_enqueue_script( 'collapse', $template_dir . '/js/bootstrap/collapse.js', array( 'jquery' ), false, true );
             wp_enqueue_script( 'dropdown', $template_dir . '/js/bootstrap/dropdown.js', array( 'jquery' ), false, true );
             wp_enqueue_script( 'modal', $template_dir . '/js/bootstrap/modal.js', array( 'jquery' ), false, true );
-            wp_enqueue_script( 'popover', $template_dir . '/js/bootstrap/popover.js', array( 'jquery' ), false, true );
+            wp_enqueue_script( 'popover', $template_dir . '/js/bootstrap/popover.js', array( 'jquery', 'tooltip' ), false, true );
             wp_enqueue_script( 'scrollspy', $template_dir . '/js/bootstrap/scrollspy.js', array( 'jquery' ), false, true );
             wp_enqueue_script( 'tab', $template_dir . '/js/bootstrap/tab.js', array( 'jquery' ), false, true );
             wp_enqueue_script( 'tooltip', $template_dir . '/js/bootstrap/tooltip.js', array( 'jquery' ), false, true );
