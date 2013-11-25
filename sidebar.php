@@ -1,17 +1,25 @@
-<aside class="col-sm-4 col-lg-4" role="complementary">
-    <?php
-    if( is_home() && is_active_sidebar( 'sidebar-main' ) ) :
-        // use sidebar-main if on home page and available
-        dynamic_sidebar( 'sidebar-main' );
-    elseif( is_active_sidebar( 'sidebar-main' ) || is_active_sidebar( 'sidebar-secondary' ) ) :
-        // use sidebar-secondary if available, falling back to sidebar-main if available
-        if( is_active_sidebar( 'sidebar-secondary' ) ) :
-            dynamic_sidebar( 'sidebar-secondary' );
-        elseif( is_active_sidebar( 'sidebar-main' ) ) :
-            dynamic_sidebar( 'sidebar-main' );
-        endif;
-    else :
-        // if the sidebars above aren't available, enter HTML/PHP to use below
-        ?>
-    <?php endif; ?>
-</aside>
+<?php
+/**
+ * The Sidebar containing the main widget areas.
+ *
+ * @package _skeletor
+ */
+?>
+	<aside class="col-sm-4 col-lg-4" role="complementary" id="secondary">
+		<?php do_action( 'before_sidebar' ); ?>
+		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+
+			<aside id="search" class="widget widget_search">
+				<?php get_search_form(); ?>
+			</aside>
+
+			<aside id="archives" class="widget">
+				<h3><?php _e( 'Archives', '_skeletor' ); ?></h3>
+				<ul>
+					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+				</ul>
+			</aside>
+
+
+		<?php endif; // end sidebar widget area ?>
+	</aside><!-- #secondary -->
