@@ -1,55 +1,102 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying Archive pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package _skeletor
+ */
+
+get_header(); ?>
 
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-lg-8" role="main">
+			<div class="col-sm-8 col-lg-8" role="main" id="primary">
 
-	    <?php if( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-	        <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
-	        <?php /* If this is a category archive */ if( is_category() ) : ?>
-	            <h1><?php printf( __( 'Archive for the &#8216;%s&#8217; Category', 'skeletor' ), single_cat_title( '', false ) ); ?></h1>
-	            <?php
-	        /* If this is a tag archive */
-	        elseif( is_tag() ) :
-	            ?>
-	            <h1><?php printf( __( 'Posts Tagged &#8216;%s&#8217;', 'skeletor' ), single_tag_title( '', false ) ); ?></h1>
-	            <?php
-	        /* If this is a daily archive */
-	        elseif( is_day() ) :
-	            ?>
-	            <h1><?php printf( __( 'Archive for %s|Daily archive page', 'skeletor' ), get_the_time( 'F jS, Y' ) ); ?></h1>
-	            <?php
-	        /* If this is a monthly archive */
-	        elseif( is_month() ) :
-	            ?>
-	            <h1><?php printf( __( 'Archive for %s|Monthly archive page', 'skeletor' ), get_the_time( 'F, Y' ) ); ?></h1>
-	            <?php
-	        /* If this is a yearly archive */
-	        elseif( is_year() ) :
-	            ?>
-	            <h1><?php printf( __( 'Archive for %s|Yearly archive page', 'skeletor' ), get_the_time( 'Y' ) ); ?></h1>
-	            <?php
-	        /* If this is an author archive */
-	        elseif( is_author() ) :
-	            ?>
-	            <h1><?php _e( 'Author Archive', 'skeletor' ); ?></h1>
-	            <?php
-	        /* If this is a paged archive */
-	        elseif( isset( $_GET['paged'] ) && !empty( $_GET['paged'] ) ) :
-	            ?>
-	            <h1><?php _e( 'Blog Archives', 'skeletor' ); ?></h1>
-	        <?php
-	        endif;
-	        while( have_posts() ) : the_post();
-	            get_template_part( 'tmpl/post-loop' );
-	        endwhile;
-	        get_template_part( 'tmpl/navigation.php' );
-	    else :
-	        get_template_part( 'tmpl/post-empty' );
-	    endif;
-	    ?>
+				<header class="page-header">
+					<h1 class="page-title">
+						<?php
+							if ( is_category() ) :
+								single_cat_title();
+
+							elseif ( is_tag() ) :
+								single_tag_title();
+
+							elseif ( is_author() ) :
+								/* Queue the first post, that way we know
+								 * what author we're dealing with (if that is the case).
+								*/
+								the_post();
+								printf( __( 'Author: %s', '_skeletor' ), '<span class="vcard">' . get_the_author() . '</span>' );
+								/* Since we called the_post() above, we need to
+								 * rewind the loop back to the beginning that way
+								 * we can run the loop properly, in full.
+								 */
+								rewind_posts();
+
+							elseif ( is_day() ) :
+								printf( __( 'Day: %s', '_skeletor' ), '<span>' . get_the_date() . '</span>' );
+
+							elseif ( is_month() ) :
+								printf( __( 'Month: %s', '_skeletor' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+
+							elseif ( is_year() ) :
+								printf( __( 'Year: %s', '_skeletor' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+
+							elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+								_e( 'Asides', '_skeletor' );
+
+							elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+								_e( 'Images', '_skeletor');
+
+							elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+								_e( 'Videos', '_skeletor' );
+
+							elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+								_e( 'Quotes', '_skeletor' );
+
+							elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+								_e( 'Links', '_skeletor' );
+
+							else :
+								_e( 'Archives', '_skeletor' );
+
+							endif;
+						?>
+					</h1>
+					<?php
+						// Show an optional term description.
+						$term_description = term_description();
+						if ( ! empty( $term_description ) ) :
+							printf( '<div class="taxonomy-description">%s</div>', $term_description );
+						endif;
+					?>
+				</header><!-- .page-header -->
+
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
+					?>
+
+				<?php endwhile; ?>
+
+				<?php _skeletor_content_nav( 'nav-below' ); ?>
+
+			<?php else : ?>
+
+				<?php get_template_part( 'content', 'none' ); ?>
+
+			<?php endif; ?>
+
 			</div>
 			<?php get_sidebar();?>
 		</div>
