@@ -5,6 +5,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if( has_post_thumbnail() ) {
+		echo '<div class="attachment-container">';
+		the_post_thumbnail();
+		echo '</div>';
+	}?>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
