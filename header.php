@@ -28,13 +28,17 @@
 				</button>
 				<a href="/" class="navbar-brand">Project Name</a>
 			</div>
-			<?php wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'container' 		=> 'nav',
-				'container_class' 	=> 'navbar-collapse bs-navbar-collapse collapse',
-				'menu_class' 		=> '',
-				'depth'				=> '1',
-				'items_wrap'      	=> '<ul id="%1$s" class="%2$s nav navbar-nav" role="navigation">%3$s</ul>'
-			) ); ?>
+			<?php 
+			if( has_nav_menu( 'primary' ) ) {
+				wp_nav_menu( array(
+					'theme_location' => 'primary',
+					'container' 		=> 'nav',
+					'container_class' 	=> 'navbar-collapse bs-navbar-collapse collapse',
+					'menu_class' 		=> '',
+					'depth'				=> '1',
+					'items_wrap'      	=> '<ul id="%1$s" class="%2$s nav navbar-nav" role="navigation">%3$s</ul>'
+				) ); 
+			}
+			?>
 		</div>
 	</header>
