@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _skeletor
+ * @package skeletor
  */
 
 get_header(); ?>
@@ -30,7 +30,7 @@ get_header(); ?>
 								 * what author we're dealing with (if that is the case).
 								*/
 								the_post();
-								printf( __( 'Author: %s', '_skeletor' ), '<span class="vcard">' . get_the_author() . '</span>' );
+								printf( __( 'Author: %s', 'skeletor' ), '<span class="vcard">' . get_the_author() . '</span>' );
 								/* Since we called the_post() above, we need to
 								 * rewind the loop back to the beginning that way
 								 * we can run the loop properly, in full.
@@ -38,31 +38,31 @@ get_header(); ?>
 								rewind_posts();
 
 							elseif ( is_day() ) :
-								printf( __( 'Day: %s', '_skeletor' ), '<span>' . get_the_date() . '</span>' );
+								printf( __( 'Day: %s', 'skeletor' ), '<span>' . get_the_date() . '</span>' );
 
 							elseif ( is_month() ) :
-								printf( __( 'Month: %s', '_skeletor' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+								printf( __( 'Month: %s', 'skeletor' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 							elseif ( is_year() ) :
-								printf( __( 'Year: %s', '_skeletor' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+								printf( __( 'Year: %s', 'skeletor' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 							elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-								_e( 'Asides', '_skeletor' );
+								_e( 'Asides', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-								_e( 'Images', '_skeletor');
+								_e( 'Images', 'skeletor');
 
 							elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-								_e( 'Videos', '_skeletor' );
+								_e( 'Videos', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-								_e( 'Quotes', '_skeletor' );
+								_e( 'Quotes', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-								_e( 'Links', '_skeletor' );
+								_e( 'Links', 'skeletor' );
 
 							else :
-								_e( 'Archives', '_skeletor' );
+								_e( 'Archives', 'skeletor' );
 
 							endif;
 						?>
@@ -89,7 +89,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php _skeletor_content_nav( 'nav-below' ); ?>
+				<?php skeletor_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 

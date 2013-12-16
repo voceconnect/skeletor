@@ -3,17 +3,17 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package _skeletor
+ * @package skeletor
  */
 
 /**
  * Add theme support for Infinite Scroll.
  * See: http://jetpack.me/support/infinite-scroll/
  */
-function _skeletor_jetpack_setup() {
+function skeletor_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'footer'    => 'page',
 	) );
 }
-add_action( 'after_setup_theme', '_skeletor_jetpack_setup' );
+add_action( 'after_setup_theme', 'skeletor_jetpack_setup' );

@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _skeletor
+ * @package skeletor
  */
 
 get_header(); ?>
@@ -33,7 +33,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php _skeletor_content_nav( 'nav-below' ); ?>
+				<?php skeletor_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 

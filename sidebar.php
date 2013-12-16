@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package _skeletor
+ * @package skeletor
  */
 ?>
 	<aside class="col-sm-4 col-lg-4" role="complementary" id="secondary">
@@ -14,7 +14,7 @@
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h3><?php _e( 'Archives', '_skeletor' ); ?></h3>
+				<h3><?php _e( 'Archives', 'skeletor' ); ?></h3>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>

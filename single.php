@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package _skeletor
+ * @package skeletor
  */
 
 get_header(); ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
-				<?php _skeletor_content_nav( 'nav-below' ); ?>
+				<?php skeletor_content_nav( 'nav-below' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template

@@ -12,39 +12,39 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package _skeletor
+ * @package skeletor
  */
 
 /**
  * Setup the WordPress core custom header feature.
  *
- * @uses _skeletor_header_style()
- * @uses _skeletor_admin_header_style()
- * @uses _skeletor_admin_header_image()
+ * @uses skeletor_header_style()
+ * @uses skeletor_admin_header_style()
+ * @uses skeletor_admin_header_image()
  *
- * @package _skeletor
+ * @package skeletor
  */
-function _skeletor_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( '_skeletor_custom_header_args', array(
+function skeletor_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'skeletor_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => '_skeletor_header_style',
-		'admin-head-callback'    => '_skeletor_admin_header_style',
-		'admin-preview-callback' => '_skeletor_admin_header_image',
+		'wp-head-callback'       => 'skeletor_header_style',
+		'admin-head-callback'    => 'skeletor_admin_header_style',
+		'admin-preview-callback' => 'skeletor_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', '_skeletor_custom_header_setup' );
+add_action( 'after_setup_theme', 'skeletor_custom_header_setup' );
 
-if ( ! function_exists( '_skeletor_header_style' ) ) :
+if ( ! function_exists( 'skeletor_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see _skeletor_custom_header_setup().
+ * @see skeletor_custom_header_setup().
  */
-function _skeletor_header_style() {
+function skeletor_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -76,15 +76,15 @@ function _skeletor_header_style() {
 	</style>
 	<?php
 }
-endif; // _skeletor_header_style
+endif; // skeletor_header_style
 
-if ( ! function_exists( '_skeletor_admin_header_style' ) ) :
+if ( ! function_exists( 'skeletor_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see _skeletor_custom_header_setup().
+ * @see skeletor_custom_header_setup().
  */
-function _skeletor_admin_header_style() {
+function skeletor_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -104,15 +104,15 @@ function _skeletor_admin_header_style() {
 	</style>
 <?php
 }
-endif; // _skeletor_admin_header_style
+endif; // skeletor_admin_header_style
 
-if ( ! function_exists( '_skeletor_admin_header_image' ) ) :
+if ( ! function_exists( 'skeletor_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see _skeletor_custom_header_setup().
+ * @see skeletor_custom_header_setup().
  */
-function _skeletor_admin_header_image() {
+function skeletor_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
@@ -124,4 +124,4 @@ function _skeletor_admin_header_image() {
 	</div>
 <?php
 }
-endif; // _skeletor_admin_header_image
+endif; // skeletor_admin_header_image
