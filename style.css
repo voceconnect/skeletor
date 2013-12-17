@@ -451,7 +451,7 @@ table { border-collapse: collapse; border-spacing: 0; }
   /* line 76, sass/bootstrap/_print.scss */
   .table td, table td, .table th, table th { background-color: white !important; }
   /* line 82, sass/bootstrap/_print.scss */
-  .btn > .caret, .dropup > .btn > .caret { border-top-color: black !important; }
+  .btn > .caret, .category-buttons a > .caret, .dropup > .btn > .caret, .category-buttons .dropup > a > .caret { border-top-color: black !important; }
   /* line 86, sass/bootstrap/_print.scss */
   .label { border: 1px solid black; }
   /* line 90, sass/bootstrap/_print.scss */
@@ -1160,7 +1160,7 @@ textarea.form-control { height: auto; }
 input[type="radio"][disabled], fieldset[disabled] input[type="radio"], input[type="checkbox"][disabled], fieldset[disabled] input[type="checkbox"], .radio[disabled], fieldset[disabled] .radio, .radio-inline[disabled], fieldset[disabled] .radio-inline, .checkbox[disabled], fieldset[disabled] .checkbox, .checkbox-inline[disabled], fieldset[disabled] .checkbox-inline { cursor: not-allowed; }
 
 /* line 715, sass/bootstrap/_mixins.scss */
-.input-sm, .input-group-sm > .form-control, .input-group-sm > .input-group-addon, .input-group-sm > .input-group-btn > .btn { height: 30px; padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; }
+.input-sm, .input-group-sm > .form-control, .input-group-sm > .input-group-addon, .input-group-sm > .input-group-btn > .btn, .category-buttons .input-group-sm > .input-group-btn > a { height: 30px; padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; }
 
 /* line 720, sass/bootstrap/_mixins.scss */
 select.input-sm, .input-group-sm > select.form-control, .input-group-sm > select.input-group-addon, .input-group-sm > .input-group-btn > select.btn { height: 30px; line-height: 30px; }
@@ -1169,7 +1169,7 @@ select.input-sm, .input-group-sm > select.form-control, .input-group-sm > select
 textarea.input-sm, .input-group-sm > textarea.form-control, .input-group-sm > textarea.input-group-addon, .input-group-sm > .input-group-btn > textarea.btn { height: auto; }
 
 /* line 715, sass/bootstrap/_mixins.scss */
-.input-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn { height: 45px; padding: 10px 16px; font-size: 18px; line-height: 1.33; border-radius: 6px; }
+.input-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn, .category-buttons .input-group-lg > .input-group-btn > a { height: 45px; padding: 10px 16px; font-size: 18px; line-height: 1.33; border-radius: 6px; }
 
 /* line 720, sass/bootstrap/_mixins.scss */
 select.input-lg, .input-group-lg > select.form-control, .input-group-lg > select.input-group-addon, .input-group-lg > .input-group-btn > select.btn { height: 45px; line-height: 45px; }
@@ -1231,15 +1231,15 @@ textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > te
   .form-horizontal .control-label { text-align: right; } }
 
 /* line 10, sass/bootstrap/_buttons.scss */
-.btn { display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.42857; text-align: center; vertical-align: middle; cursor: pointer; border: 1px solid transparent; border-radius: 4px; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
+.btn, .category-buttons a { display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.42857; text-align: center; vertical-align: middle; cursor: pointer; border: 1px solid transparent; border-radius: 4px; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
 /* line 25, sass/bootstrap/_buttons.scss */
-.btn:focus { outline: thin dotted #333333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
+.btn:focus, .category-buttons a:focus { outline: thin dotted #333333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
 /* line 30, sass/bootstrap/_buttons.scss */
-.btn:hover, .btn:focus { color: #333333; text-decoration: none; }
+.btn:hover, .category-buttons a:hover, .btn:focus, .category-buttons a:focus { color: #333333; text-decoration: none; }
 /* line 36, sass/bootstrap/_buttons.scss */
-.btn:active, .btn.active { outline: 0; background-image: none; -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+.btn:active, .category-buttons a:active, .btn.active, .category-buttons a.active { outline: 0; background-image: none; -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
 /* line 44, sass/bootstrap/_buttons.scss */
-.btn.disabled, .btn[disabled], fieldset[disabled] .btn { cursor: not-allowed; pointer-events: none; opacity: 0.65; filter: alpha(opacity=65); -webkit-box-shadow: none; box-shadow: none; }
+.btn.disabled, .category-buttons a.disabled, .btn[disabled], .category-buttons a[disabled], fieldset[disabled] .btn, fieldset[disabled] .category-buttons a, .category-buttons fieldset[disabled] a { cursor: not-allowed; pointer-events: none; opacity: 0.65; filter: alpha(opacity=65); -webkit-box-shadow: none; box-shadow: none; }
 
 /* line 57, sass/bootstrap/_buttons.scss */
 .btn-default { color: #333333; background-color: white; border-color: #cccccc; }
@@ -1307,17 +1307,17 @@ textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > te
 .btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active { background-color: #5cb85c; border-color: #4cae4c; }
 
 /* line 76, sass/bootstrap/_buttons.scss */
-.btn-info { color: white; background-color: #5bc0de; border-color: #46b8da; }
+.btn-info, .category-buttons a { color: white; background-color: #5bc0de; border-color: #46b8da; }
 /* line 414, sass/bootstrap/_mixins.scss */
-.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active { color: white; background-color: #39b3d7; border-color: #269abc; }
+.btn-info:hover, .category-buttons a:hover, .btn-info:focus, .category-buttons a:focus, .btn-info:active, .category-buttons a:active, .btn-info.active, .category-buttons a.active { color: white; background-color: #39b3d7; border-color: #269abc; }
 /* line 419, sass/bootstrap/_mixins.scss */
-.open .btn-info.dropdown-toggle { color: white; background-color: #39b3d7; border-color: #269abc; }
+.open .btn-info.dropdown-toggle, .open .category-buttons a.dropdown-toggle, .category-buttons .open a.dropdown-toggle { color: white; background-color: #39b3d7; border-color: #269abc; }
 /* line 425, sass/bootstrap/_mixins.scss */
-.btn-info:active, .btn-info.active { background-image: none; }
+.btn-info:active, .category-buttons a:active, .btn-info.active, .category-buttons a.active { background-image: none; }
 /* line 428, sass/bootstrap/_mixins.scss */
-.open .btn-info.dropdown-toggle { background-image: none; }
+.open .btn-info.dropdown-toggle, .open .category-buttons a.dropdown-toggle, .category-buttons .open a.dropdown-toggle { background-image: none; }
 /* line 438, sass/bootstrap/_mixins.scss */
-.btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active { background-color: #5bc0de; border-color: #46b8da; }
+.btn-info.disabled, .category-buttons a.disabled, .btn-info.disabled:hover, .category-buttons a.disabled:hover, .btn-info.disabled:focus, .category-buttons a.disabled:focus, .btn-info.disabled:active, .category-buttons a.disabled:active, .btn-info.disabled.active, .category-buttons a.disabled.active, .btn-info[disabled], .category-buttons a[disabled], .btn-info[disabled]:hover, .category-buttons a[disabled]:hover, .btn-info[disabled]:focus, .category-buttons a[disabled]:focus, .btn-info[disabled]:active, .category-buttons a[disabled]:active, .btn-info[disabled].active, .category-buttons a[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .category-buttons a, .category-buttons fieldset[disabled] a, fieldset[disabled] .btn-info:hover, fieldset[disabled] .category-buttons a:hover, .category-buttons fieldset[disabled] a:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .category-buttons a:focus, .category-buttons fieldset[disabled] a:focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .category-buttons a:active, .category-buttons fieldset[disabled] a:active, fieldset[disabled] .btn-info.active, fieldset[disabled] .category-buttons a.active, .category-buttons fieldset[disabled] a.active { background-color: #5bc0de; border-color: #46b8da; }
 
 /* line 85, sass/bootstrap/_buttons.scss */
 .btn-link { color: #428bca; font-weight: normal; cursor: pointer; border-radius: 0; }
@@ -1331,13 +1331,13 @@ textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > te
 .btn-link[disabled]:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] .btn-link:focus { color: #999999; text-decoration: none; }
 
 /* line 124, sass/bootstrap/_buttons.scss */
-.btn-lg, .btn-group-lg > .btn { padding: 10px 16px; font-size: 18px; line-height: 1.33; border-radius: 6px; }
+.btn-lg, .btn-group-lg > .btn, .category-buttons .btn-group-lg > a { padding: 10px 16px; font-size: 18px; line-height: 1.33; border-radius: 6px; }
 
 /* line 129, sass/bootstrap/_buttons.scss */
-.btn-sm, .btn-group-sm > .btn, .btn-xs, .btn-group-xs > .btn { padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; }
+.btn-sm, .btn-group-sm > .btn, .category-buttons .btn-group-sm > a, .btn-xs, .btn-group-xs > .btn, .category-buttons .btn-group-xs > a { padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; }
 
 /* line 133, sass/bootstrap/_buttons.scss */
-.btn-xs, .btn-group-xs > .btn { padding: 1px 5px; }
+.btn-xs, .btn-group-xs > .btn, .category-buttons .btn-group-xs > a { padding: 1px 5px; }
 
 /* line 141, sass/bootstrap/_buttons.scss */
 .btn-block { display: block; width: 100%; padding-left: 0; padding-right: 0; }
@@ -2020,24 +2020,24 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 /* line 10, sass/bootstrap/_button-groups.scss */
 .btn-default .caret { border-top-color: #333333; }
 /* line 17, sass/bootstrap/_button-groups.scss */
-.btn-primary .caret, .btn-success .caret, .btn-warning .caret, .btn-danger .caret, .btn-info .caret { border-top-color: #fff; }
+.btn-primary .caret, .btn-success .caret, .btn-warning .caret, .btn-danger .caret, .btn-info .caret, .category-buttons a .caret { border-top-color: #fff; }
 
 /* line 22, sass/bootstrap/_button-groups.scss */
 .dropup .btn-default .caret { border-bottom-color: #333333; }
 /* line 30, sass/bootstrap/_button-groups.scss */
-.dropup .btn-primary .caret, .dropup .btn-success .caret, .dropup .btn-warning .caret, .dropup .btn-danger .caret, .dropup .btn-info .caret { border-bottom-color: #fff; }
+.dropup .btn-primary .caret, .dropup .btn-success .caret, .dropup .btn-warning .caret, .dropup .btn-danger .caret, .dropup .btn-info .caret, .dropup .category-buttons a .caret, .category-buttons .dropup a .caret { border-bottom-color: #fff; }
 
 /* line 38, sass/bootstrap/_button-groups.scss */
 .btn-group, .btn-group-vertical { position: relative; display: inline-block; vertical-align: middle; }
 /* line 42, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn, .btn-group-vertical > .btn { position: relative; float: left; }
+.btn-group > .btn, .category-buttons .btn-group > a, .btn-group-vertical > .btn, .category-buttons .btn-group-vertical > a { position: relative; float: left; }
 /* line 49, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active, .btn-group-vertical > .btn:hover, .btn-group-vertical > .btn:focus, .btn-group-vertical > .btn:active, .btn-group-vertical > .btn.active { z-index: 2; }
+.btn-group > .btn:hover, .category-buttons .btn-group > a:hover, .btn-group > .btn:focus, .category-buttons .btn-group > a:focus, .btn-group > .btn:active, .category-buttons .btn-group > a:active, .btn-group > .btn.active, .category-buttons .btn-group > a.active, .btn-group-vertical > .btn:hover, .category-buttons .btn-group-vertical > a:hover, .btn-group-vertical > .btn:focus, .category-buttons .btn-group-vertical > a:focus, .btn-group-vertical > .btn:active, .category-buttons .btn-group-vertical > a:active, .btn-group-vertical > .btn.active, .category-buttons .btn-group-vertical > a.active { z-index: 2; }
 /* line 52, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:focus, .btn-group-vertical > .btn:focus { outline: none; }
+.btn-group > .btn:focus, .category-buttons .btn-group > a:focus, .btn-group-vertical > .btn:focus, .category-buttons .btn-group-vertical > a:focus { outline: none; }
 
 /* line 64, sass/bootstrap/_button-groups.scss */
-.btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group { margin-left: -1px; }
+.btn-group .btn + .btn, .btn-group .category-buttons a + .btn, .category-buttons .btn-group a + .btn, .btn-group .category-buttons .btn + a, .category-buttons .btn-group .btn + a, .btn-group .category-buttons a + a, .category-buttons .btn-group a + a, .btn-group .btn + .btn-group, .btn-group .category-buttons a + .btn-group, .category-buttons .btn-group a + .btn-group, .btn-group .btn-group + .btn, .btn-group .category-buttons .btn-group + a, .category-buttons .btn-group .btn-group + a, .btn-group .btn-group + .btn-group { margin-left: -1px; }
 
 /* line 21, sass/bootstrap/_mixins.scss */
 .btn-toolbar:before, .btn-toolbar:after { content: " "; /* 1 */ display: table; /* 2 */ }
@@ -2046,86 +2046,86 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 /* line 73, sass/bootstrap/_button-groups.scss */
 .btn-toolbar .btn-group { float: left; }
 /* line 80, sass/bootstrap/_button-groups.scss */
-.btn-toolbar > .btn + .btn, .btn-toolbar > .btn + .btn-group, .btn-toolbar > .btn-group + .btn, .btn-toolbar > .btn-group + .btn-group { margin-left: 5px; }
+.btn-toolbar > .btn + .btn, .category-buttons .btn-toolbar > a + .btn, .category-buttons .btn-toolbar > .btn + a, .category-buttons .btn-toolbar > a + a, .btn-toolbar > .btn + .btn-group, .category-buttons .btn-toolbar > a + .btn-group, .btn-toolbar > .btn-group + .btn, .category-buttons .btn-toolbar > .btn-group + a, .btn-toolbar > .btn-group + .btn-group { margin-left: 5px; }
 
 /* line 86, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) { border-radius: 0; }
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .category-buttons .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) { border-radius: 0; }
 
 /* line 91, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child { margin-left: 0; }
+.btn-group > .btn:first-child, .category-buttons .btn-group > a:first-child { margin-left: 0; }
 /* line 93, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) { border-bottom-right-radius: 0; border-top-right-radius: 0; }
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .category-buttons .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) { border-bottom-right-radius: 0; border-top-right-radius: 0; }
 
 /* line 99, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) { border-bottom-left-radius: 0; border-top-left-radius: 0; }
+.btn-group > .btn:last-child:not(:first-child), .category-buttons .btn-group > a:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) { border-bottom-left-radius: 0; border-top-left-radius: 0; }
 
 /* line 104, sass/bootstrap/_button-groups.scss */
 .btn-group > .btn-group { float: left; }
 
 /* line 107, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn { border-radius: 0; }
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .category-buttons .btn-group > .btn-group:not(:first-child):not(:last-child) > a { border-radius: 0; }
 
 /* line 112, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > .dropdown-toggle { border-bottom-right-radius: 0; border-top-right-radius: 0; }
+.btn-group > .btn-group:first-child > .btn:last-child, .category-buttons .btn-group > .btn-group:first-child > a:last-child, .btn-group > .btn-group:first-child > .dropdown-toggle { border-bottom-right-radius: 0; border-top-right-radius: 0; }
 
 /* line 116, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:last-child > .btn:first-child { border-bottom-left-radius: 0; border-top-left-radius: 0; }
+.btn-group > .btn-group:last-child > .btn:first-child, .category-buttons .btn-group > .btn-group:last-child > a:first-child { border-bottom-left-radius: 0; border-top-left-radius: 0; }
 
 /* line 122, sass/bootstrap/_button-groups.scss */
 .btn-group .dropdown-toggle:active, .btn-group.open .dropdown-toggle { outline: 0; }
 
 /* line 140, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn + .dropdown-toggle { padding-left: 8px; padding-right: 8px; }
+.btn-group > .btn + .dropdown-toggle, .category-buttons .btn-group > a + .dropdown-toggle { padding-left: 8px; padding-right: 8px; }
 
 /* line 144, sass/bootstrap/_button-groups.scss */
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle { padding-left: 12px; padding-right: 12px; }
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .category-buttons .btn-group-lg.btn-group > a + .dropdown-toggle { padding-left: 12px; padding-right: 12px; }
 
 /* line 151, sass/bootstrap/_button-groups.scss */
 .btn-group.open .dropdown-toggle { -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
 
 /* line 157, sass/bootstrap/_button-groups.scss */
-.btn .caret { margin-left: 0; }
+.btn .caret, .category-buttons a .caret { margin-left: 0; }
 
 /* line 161, sass/bootstrap/_button-groups.scss */
-.btn-lg .caret, .btn-group-lg > .btn .caret { border-width: 5px 5px 0; border-bottom-width: 0; }
+.btn-lg .caret, .btn-group-lg > .btn .caret, .category-buttons .btn-group-lg > a .caret { border-width: 5px 5px 0; border-bottom-width: 0; }
 
 /* line 166, sass/bootstrap/_button-groups.scss */
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret { border-width: 0 5px 5px; }
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .category-buttons .btn-group-lg > a .caret, .category-buttons .dropup .btn-group-lg > a .caret { border-width: 0 5px 5px; }
 
 /* line 176, sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn, .btn-group-vertical > .btn-group { display: block; float: none; width: 100%; max-width: 100%; }
+.btn-group-vertical > .btn, .category-buttons .btn-group-vertical > a, .btn-group-vertical > .btn-group { display: block; float: none; width: 100%; max-width: 100%; }
 /* line 21, sass/bootstrap/_mixins.scss */
 .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after { content: " "; /* 1 */ display: table; /* 2 */ }
 /* line 25, sass/bootstrap/_mixins.scss */
 .btn-group-vertical > .btn-group:after { clear: both; }
 /* line 186, sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group > .btn { float: none; }
+.btn-group-vertical > .btn-group > .btn, .category-buttons .btn-group-vertical > .btn-group > a { float: none; }
 /* line 194, sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn + .btn, .btn-group-vertical > .btn + .btn-group, .btn-group-vertical > .btn-group + .btn, .btn-group-vertical > .btn-group + .btn-group { margin-top: -1px; margin-left: 0; }
+.btn-group-vertical > .btn + .btn, .category-buttons .btn-group-vertical > a + .btn, .category-buttons .btn-group-vertical > .btn + a, .category-buttons .btn-group-vertical > a + a, .btn-group-vertical > .btn + .btn-group, .category-buttons .btn-group-vertical > a + .btn-group, .btn-group-vertical > .btn-group + .btn, .category-buttons .btn-group-vertical > .btn-group + a, .btn-group-vertical > .btn-group + .btn-group { margin-top: -1px; margin-left: 0; }
 
 /* line 201, sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:not(:first-child):not(:last-child) { border-radius: 0; }
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .category-buttons .btn-group-vertical > a:not(:first-child):not(:last-child) { border-radius: 0; }
 /* line 204, sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:first-child:not(:last-child) { border-top-right-radius: 4px; border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
+.btn-group-vertical > .btn:first-child:not(:last-child), .category-buttons .btn-group-vertical > a:first-child:not(:last-child) { border-top-right-radius: 4px; border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
 /* line 208, sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:last-child:not(:first-child) { border-bottom-left-radius: 4px; border-top-right-radius: 0; border-top-left-radius: 0; }
+.btn-group-vertical > .btn:last-child:not(:first-child), .category-buttons .btn-group-vertical > a:last-child:not(:first-child) { border-bottom-left-radius: 4px; border-top-right-radius: 0; border-top-left-radius: 0; }
 
 /* line 213, sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn { border-radius: 0; }
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .category-buttons .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a { border-radius: 0; }
 
 /* line 218, sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:first-child > .btn:last-child, .btn-group-vertical > .btn-group:first-child > .dropdown-toggle { border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
+.btn-group-vertical > .btn-group:first-child > .btn:last-child, .category-buttons .btn-group-vertical > .btn-group:first-child > a:last-child, .btn-group-vertical > .btn-group:first-child > .dropdown-toggle { border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
 
 /* line 222, sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:last-child > .btn:first-child { border-top-right-radius: 0; border-top-left-radius: 0; }
+.btn-group-vertical > .btn-group:last-child > .btn:first-child, .category-buttons .btn-group-vertical > .btn-group:last-child > a:first-child { border-top-right-radius: 0; border-top-left-radius: 0; }
 
 /* line 231, sass/bootstrap/_button-groups.scss */
 .btn-group-justified { display: table; width: 100%; table-layout: fixed; border-collapse: separate; }
 /* line 236, sass/bootstrap/_button-groups.scss */
-.btn-group-justified .btn { float: none; display: table-cell; width: 1%; }
+.btn-group-justified .btn, .btn-group-justified .category-buttons a, .category-buttons .btn-group-justified a { float: none; display: table-cell; width: 1%; }
 
 /* line 246, sass/bootstrap/_button-groups.scss */
-[data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > .btn > input[type="checkbox"] { display: none; }
+[data-toggle="buttons"] > .btn > input[type="radio"], .category-buttons [data-toggle="buttons"] > a > input[type="radio"], [data-toggle="buttons"] > .btn > input[type="checkbox"], .category-buttons [data-toggle="buttons"] > a > input[type="checkbox"] { display: none; }
 
 /* line 7, sass/bootstrap/_input-groups.scss */
 .input-group { position: relative; display: table; border-collapse: separate; }
@@ -2145,20 +2145,20 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 /* line 59, sass/bootstrap/_input-groups.scss */
 .input-group-addon { padding: 6px 12px; font-size: 14px; font-weight: normal; line-height: 1; text-align: center; background-color: #eeeeee; border: 1px solid #cccccc; border-radius: 4px; }
 /* line 70, sass/bootstrap/_input-groups.scss */
-.input-group-addon.input-sm, .input-group-sm > .input-group-addon, .input-group-sm > .input-group-btn > .input-group-addon.btn { padding: 5px 10px; font-size: 12px; border-radius: 3px; }
+.input-group-addon.input-sm, .input-group-sm > .input-group-addon, .input-group-sm > .input-group-btn > .input-group-addon.btn, .category-buttons .input-group-sm > .input-group-btn > a.input-group-addon { padding: 5px 10px; font-size: 12px; border-radius: 3px; }
 /* line 75, sass/bootstrap/_input-groups.scss */
-.input-group-addon.input-lg, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .input-group-addon.btn { padding: 10px 16px; font-size: 18px; border-radius: 6px; }
+.input-group-addon.input-lg, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .input-group-addon.btn, .category-buttons .input-group-lg > .input-group-btn > a.input-group-addon { padding: 10px 16px; font-size: 18px; border-radius: 6px; }
 /* line 83, sass/bootstrap/_input-groups.scss */
 .input-group-addon input[type="radio"], .input-group-addon input[type="checkbox"] { margin-top: 0; }
 
 /* line 93, sass/bootstrap/_input-groups.scss */
-.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) { border-bottom-right-radius: 0; border-top-right-radius: 0; }
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .category-buttons .input-group-btn:first-child > a, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .category-buttons .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle) { border-bottom-right-radius: 0; border-top-right-radius: 0; }
 
 /* line 96, sass/bootstrap/_input-groups.scss */
 .input-group-addon:first-child { border-right: 0; }
 
 /* line 103, sass/bootstrap/_input-groups.scss */
-.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child > .btn, .input-group-btn:last-child > .dropdown-toggle, .input-group-btn:first-child > .btn:not(:first-child) { border-bottom-left-radius: 0; border-top-left-radius: 0; }
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child > .btn, .category-buttons .input-group-btn:last-child > a, .input-group-btn:last-child > .dropdown-toggle, .input-group-btn:first-child > .btn:not(:first-child), .category-buttons .input-group-btn:first-child > a:not(:first-child) { border-bottom-left-radius: 0; border-top-left-radius: 0; }
 
 /* line 106, sass/bootstrap/_input-groups.scss */
 .input-group-addon:last-child { border-left: 0; }
@@ -2167,11 +2167,11 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 .input-group-btn { position: relative; white-space: nowrap; }
 
 /* line 116, sass/bootstrap/_input-groups.scss */
-.input-group-btn > .btn { position: relative; }
+.input-group-btn > .btn, .category-buttons .input-group-btn > a { position: relative; }
 /* line 119, sass/bootstrap/_input-groups.scss */
-.input-group-btn > .btn + .btn { margin-left: -4px; }
+.input-group-btn > .btn + .btn, .category-buttons .input-group-btn > a + .btn, .category-buttons .input-group-btn > .btn + a, .category-buttons .input-group-btn > a + a { margin-left: -4px; }
 /* line 124, sass/bootstrap/_input-groups.scss */
-.input-group-btn > .btn:hover, .input-group-btn > .btn:active { z-index: 2; }
+.input-group-btn > .btn:hover, .category-buttons .input-group-btn > a:hover, .input-group-btn > .btn:active, .category-buttons .input-group-btn > a:active { z-index: 2; }
 
 /* line 9, sass/bootstrap/_navs.scss */
 .nav { margin-bottom: 0; padding-left: 0; list-style: none; }
@@ -2575,7 +2575,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 a.badge:hover, a.badge:focus { color: white; text-decoration: none; cursor: pointer; }
 
 /* line 38, sass/bootstrap/_badges.scss */
-.btn .badge { position: relative; top: -1px; }
+.btn .badge, .category-buttons a .badge { position: relative; top: -1px; }
 
 /* line 45, sass/bootstrap/_badges.scss */
 a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { color: #428bca; background-color: white; }
@@ -2935,9 +2935,9 @@ body.modal-open { margin-right: 15px; }
 /* line 25, sass/bootstrap/_mixins.scss */
 .modal-footer:after { clear: both; }
 /* line 117, sass/bootstrap/_modals.scss */
-.modal-footer .btn + .btn { margin-left: 5px; margin-bottom: 0; }
+.modal-footer .btn + .btn, .modal-footer .category-buttons a + .btn, .category-buttons .modal-footer a + .btn, .modal-footer .category-buttons .btn + a, .category-buttons .modal-footer .btn + a, .modal-footer .category-buttons a + a, .category-buttons .modal-footer a + a { margin-left: 5px; margin-bottom: 0; }
 /* line 122, sass/bootstrap/_modals.scss */
-.modal-footer .btn-group .btn + .btn { margin-left: -1px; }
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .category-buttons a + .btn, .category-buttons .modal-footer .btn-group a + .btn, .modal-footer .btn-group .category-buttons .btn + a, .category-buttons .modal-footer .btn-group .btn + a, .modal-footer .btn-group .category-buttons a + a, .category-buttons .modal-footer .btn-group a + a { margin-left: -1px; }
 /* line 126, sass/bootstrap/_modals.scss */
 .modal-footer .btn-block + .btn-block { margin-left: 0; }
 
@@ -3077,7 +3077,7 @@ body.modal-open { margin-right: 15px; }
 /* line 168, sass/bootstrap/_carousel.scss */
 .carousel-caption { position: absolute; left: 15%; right: 15%; bottom: 20px; z-index: 10; padding-top: 20px; padding-bottom: 20px; color: white; text-align: center; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
 /* line 179, sass/bootstrap/_carousel.scss */
-.carousel-caption .btn { text-shadow: none; }
+.carousel-caption .btn, .carousel-caption .category-buttons a, .category-buttons .carousel-caption a { text-shadow: none; }
 
 @media screen and (min-width: 48em) { /* line 190, sass/bootstrap/_carousel.scss */
   .carousel-control .icon-prev, .carousel-control .icon-next { width: 30px; height: 30px; margin-top: -15px; margin-left: -15px; font-size: 30px; }
@@ -3496,6 +3496,13 @@ ul { padding: 0; }
 
 /* line 19, sass/_loop.scss */
 .thumbnail { margin-bottom: 20px; }
+
+/* line 22, sass/_loop.scss */
+.category-buttons { margin: 0; padding: 0; list-style: none; }
+/* line 26, sass/_loop.scss */
+.category-buttons li { float: left; display: inline; list-style: none; margin: 0 10px 10px 0; }
+/* line 32, sass/_loop.scss */
+.category-buttons a { border-radius: none; }
 
 /* line 1, sass/_footer.scss */
 footer { border-top: 1px solid #cccccc; }

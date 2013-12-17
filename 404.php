@@ -10,7 +10,7 @@ get_header(); ?>
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-lg-8" role="main" id="primary">
+			<div class="col-md012" role="main" id="primary">
 
 				<section class="error-404 not-found">
 					<header class="page-header">
@@ -27,12 +27,12 @@ get_header(); ?>
 						<?php if ( skeletor_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 						<div class="widget widget_categories">
 							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'skeletor' ); ?></h2>
-							<ul>
+							<ul class="category-buttons">
 							<?php
 								wp_list_categories( array(
 									'orderby'    => 'count',
 									'order'      => 'DESC',
-									'show_count' => 1,
+									'show_count' => 0,
 									'title_li'   => '',
 									'number'     => 10,
 								) );
@@ -51,7 +51,6 @@ get_header(); ?>
 					</div>
 				</section>
 			</div>
-			<?php get_sidebar();?>
 		</div>
 	</div>
 </section>

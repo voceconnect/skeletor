@@ -19,3 +19,19 @@ ul {
 .thumbnail {
 	margin-bottom: 20px;
 }
+.category-buttons {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		float: left;
+		display: inline;
+		list-style: none;
+		margin: 0 10px 10px 0;
+	}
+	a {
+		@extend .btn;
+		@extend .btn-info;
+		border-radius: none;
+	}
+}
