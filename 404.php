@@ -4,8 +4,8 @@
  *
  * @package skeletor
  */
-
-get_header(); ?>
+get_header();
+?>
 
 <section>
 	<div class="container">
@@ -25,20 +25,20 @@ get_header(); ?>
 						<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 						<?php if ( skeletor_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-						<div class="widget widget_categories">
-							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'skeletor' ); ?></h2>
-							<ul class="category-buttons">
-							<?php
-								wp_list_categories( array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 0,
-									'title_li'   => '',
-									'number'     => 10,
-								) );
-							?>
-							</ul>
-						</div><!-- .widget -->
+							<div class="widget widget_categories">
+								<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'skeletor' ); ?></h2>
+								<ul class="category-buttons">
+									<?php
+									wp_list_categories( array(
+										'orderby' => 'count',
+										'order' => 'DESC',
+										'show_count' => 0,
+										'title_li' => '',
+										'number' => 10,
+									) );
+									?>
+								</ul>
+							</div><!-- .widget -->
 						<?php endif; ?>
 
 						<?php

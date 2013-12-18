@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Jetpack Compatibility File
  * See: http://jetpack.me/
@@ -13,7 +14,8 @@
 function skeletor_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'footer'    => 'page',
+		'footer' => 'page',
 	) );
 }
+
 add_action( 'after_setup_theme', 'skeletor_jetpack_setup' );
