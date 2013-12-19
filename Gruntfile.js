@@ -40,7 +40,9 @@ module.exports = function(grunt) {
             "js/skip-link-focus-fix.js"
           ],
           "js/libs/bootstrap.min.js": [
-            "js/libs/bootstrap/*.js"
+            "js/bootstrap/**/*.js",
+            "!js/bootstrap/popover.js",
+            "js/bootstrap/popover.js"
           ]
         }
       }
@@ -48,7 +50,9 @@ module.exports = function(grunt) {
     "concat": {
       "bootstrap": {
         "src": [
-          "js/libs/bootstrap/*.js"
+          "js/bootstrap/**/*.js",
+          "!js/bootstrap/popover.js",
+          "js/bootstrap/popover.js"
         ],
         "dest": "js/libs/bootstrap.js"
       },
