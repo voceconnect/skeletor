@@ -1,13 +1,25 @@
 footer {
-	border-top: 1px solid $lightGray;
-	.navbar-nav {
-		li {
-			ul {
-				display: none;
+	&[role=contentinfo] {
+		margin-top: 20px;
+		color: $lightGray;
+		background: $darkerGray;
+		border-top: 1px solid $lightGray;
+		.navbar-nav {
+			li {
+				ul {
+					display: none;
+				}
 			}
 		}
-	}
-	p {
-		padding: 15px 0;
+		p {
+			padding: 15px 0;
+		}
+		a {
+			color: $lightGray;
+			&:hover {
+				background: none;
+				color: $lighterGray;
+			}
+		}
 	}
 }

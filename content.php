@@ -46,9 +46,9 @@
 			$categories_list = get_the_category_list( __( ', ', 'skeletor' ) );
 			if ( $categories_list && skeletor_categorized_blog() ) :
 				?>
-				<span class="cat-links">
-					<?php printf( __( 'Posted in %1$s', 'skeletor' ), $categories_list ); ?>
-				</span>
+				<p class="cat-links">
+					<?php printf( __( '<strong>Categories</strong>: %1$s', 'skeletor' ), $categories_list ); ?>
+				</p>
 			<?php endif; // End if categories ?>
 
 			<?php
@@ -56,16 +56,16 @@
 			$tags_list = get_the_tag_list( '', __( ', ', 'skeletor' ) );
 			if ( $tags_list ) :
 				?>
-				<span class="tags-links">
-					<?php printf( __( 'Tagged %1$s', 'skeletor' ), $tags_list ); ?>
-				</span>
+				<p class="tags-links">
+					<?php printf( __( '<strong>Tags</strong>: %1$s', 'skeletor' ), $tags_list ); ?>
+				</p>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( !post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'skeletor' ), __( '1 Comment', 'skeletor' ), __( '% Comments', 'skeletor' ) ); ?></span>
+			<p class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'skeletor' ), __( '1 Comment', 'skeletor' ), __( '% Comments', 'skeletor' ) ); ?></p>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'skeletor' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'skeletor' ), '<p class="edit-link">', '</p>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

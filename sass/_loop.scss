@@ -1,6 +1,9 @@
 table {
 	@extend .table;
 }
+code {
+	white-space: normal;
+}
 ul {
 	padding: 0;
 }
@@ -33,5 +36,17 @@ ul {
 		@extend .btn;
 		@extend .btn-info;
 		border-radius: none;
+	}
+}
+.entry-header {
+	.entry-meta {
+		border-bottom: 1px solid $lightGray;
+	}
+}
+footer.entry-meta {
+	padding-bottom: 10px;
+	p {
+		margin: 0;
+		padding: 5px 0 0 0;
 	}
 }
