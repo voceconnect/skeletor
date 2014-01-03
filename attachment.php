@@ -1,4 +1,4 @@
-<?php get_header();?>
+<?php get_header(); ?>
 
 <section>
 	<div class="container">
@@ -8,17 +8,18 @@
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php get_template_part( 'content', 'attachment' ); ?>
-					
-					<?php 
+
+					<?php
 					// Get the parent post ID
 					$parent_id = $post->post_parent;
 					// Get the parent post Title
 					$parent_title = get_the_title( $parent_id );
 					// Get the parent post permalink
 					$parent_permalink = get_permalink( $parent_id );
-					
-					if($parent_permalink)
+
+					if ( $parent_permalink ) {
 						echo '<p><a href="' . $parent_permalink . '">&larr; ' . $parent_title . '</a></p>';
+					}
 					?>
 				<?php endwhile; // end of the loop. ?>
 
@@ -28,4 +29,4 @@
 </section>
 
 
-<?php get_footer();?>
+<?php get_footer(); ?>

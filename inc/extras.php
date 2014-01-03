@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom functions that act independently of the theme templates
  *
@@ -17,6 +18,7 @@ function skeletor_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
+
 add_filter( 'wp_page_menu_args', 'skeletor_page_menu_args' );
 
 /**
@@ -32,6 +34,7 @@ function skeletor_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'skeletor_body_classes' );
 
 /**
@@ -61,4 +64,5 @@ function skeletor_wp_title( $title, $sep ) {
 
 	return $title;
 }
+
 add_filter( 'wp_title', 'skeletor_wp_title', 10, 2 );

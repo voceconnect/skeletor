@@ -10,6 +10,6 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content attachment-container">
-		<?php echo wp_get_attachment_image( get_the_ID(), 'full' );?>
+		<?php echo wp_get_attachment_image( get_the_ID(), 'full' ); ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
