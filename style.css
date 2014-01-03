@@ -3482,6 +3482,19 @@ header .navbar-nav > li:last-child ul { left: auto; right: 0; }
 header .navbar-nav > li:hover ul { display: block; }
 @media (max-width: 47.9375em) { /* line 78, sass/_header.scss */
   header .navbar-nav > li:hover ul { display: none; } }
+/* line 87, sass/_header.scss */
+header .search-field { background-color: transparent; background-image: url('img/search-icon.png'); background-position: 5px center; background-repeat: no-repeat; background-size: 16px 16px; border: none; cursor: pointer; height: 37px; margin: 3px 0; padding: 0 0 0 34px; position: relative; -webkit-transition: width 400ms ease, background 400ms ease; transition: width 400ms ease, background 400ms ease; width: 0; }
+/* line 104, sass/_header.scss */
+header .search-field:focus { background-color: #fff; border: 2px solid #999999; cursor: text; outline: 0; width: 230px; }
+/* line 111, sass/_header.scss */
+header .search-submit { display: none; }
+
+/* line 115, sass/_header.scss */
+.search-form { position: absolute; right: 20px; top: 4px; z-index: 40; }
+@media (min-width: 48em) and (max-width: 61.1875em) { /* line 115, sass/_header.scss */
+  .search-form { right: -30px; top: 8px; } }
+@media (max-width: 47.9375em) { /* line 115, sass/_header.scss */
+  .search-form { right: 60px; top: 4px; } }
 
 /* line 4, sass/_loop.scss */
 ul { padding: 0; }
