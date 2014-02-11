@@ -77,8 +77,8 @@ module.exports = function(grunt) {
     },
     "compass": {
       "options": {
-        "config": "config.rb",
-        "basePath": "",
+        "config": "./config.rb",
+        "basePath": "./",
         "force": true
       },
       "production": {
