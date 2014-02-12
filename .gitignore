@@ -1,5 +1,6 @@
 node_modules
 nbproject
+vendor
 js/skeletor.js
 js/skeletor.min.js
 js/libs/bootstrap.js
