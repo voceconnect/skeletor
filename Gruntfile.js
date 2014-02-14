@@ -58,7 +58,8 @@ module.exports = function(grunt) {
       },
       "main": {
         "src": [
-          "js/*.js"
+          "js/script.js",
+          "js/skip-link-focus-fix.js"
         ],
         "dest": "js/skeletor.js"
       }
