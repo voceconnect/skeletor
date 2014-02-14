@@ -94,10 +94,10 @@ function skeletor_scripts() {
 	
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		wp_enqueue_script( 'bootstrap', $template_dir . '/js/libs/bootstrap.min.js', array( 'jquery' ), '3.0.0', true );
-		wp_enqueue_script( 'skeletor', $template_dir . '/js/skeletor.js', array( 'jquery', 'bootstrap', 'modrnizr' ), '0.1.0', true );
+		wp_enqueue_script( 'skeletor', $template_dir . '/js/main.js', array( 'jquery', 'bootstrap', 'modrnizr' ), '0.1.0', true );
 	} else {
 		wp_enqueue_script( 'bootstrap', $template_dir . '/js/libs/bootstrap.min.js', array( 'jquery' ), '3.0.0', true );
-		wp_enqueue_script( 'skeletor', $template_dir . '/js/skeletor.min.js', array( 'jquery', 'bootstrap' ), '0.1.0', true );
+		wp_enqueue_script( 'skeletor', $template_dir . '/js/main.min.js', array( 'jquery', 'bootstrap' ), '0.1.0', true );
 	}
 }
 

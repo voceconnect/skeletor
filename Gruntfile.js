@@ -35,7 +35,7 @@ module.exports = function(grunt) {
           "preserveComments": "some"
         },
         "files": {
-          "js/skeletor.min.js": [
+          "js/main.min.js": [
             "js/script.js",
             "js/skip-link-focus-fix.js"
           ],
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
           "js/script.js",
           "js/skip-link-focus-fix.js"
         ],
-        "dest": "js/skeletor.js"
+        "dest": "js/main.js"
       }
     },
     "imagemin": {
