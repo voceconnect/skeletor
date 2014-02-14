@@ -1,0 +1,18 @@
+@import "compass";
+@import "mixins";
+@import "bootstrap/mixins";
+@import "bootstrap/variables";
+@import "variables-ems";
+@import "variables";
+@import "bootstrap/scaffolding";
+@import "bootstrap/pagination";
+@import "bootstrap/tables";
+@import "bootstrap/type";
+@import "bootstrap/grid";
+@import "required";
+@import "fonts";
+@import "loop";
+
+.wp-editor {
+	@extend .post-entry;
+}
