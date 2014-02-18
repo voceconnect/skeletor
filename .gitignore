@@ -1,11 +1,9 @@
 .DS_Store
 node_modules
-nbproject
+.sass-cache
 vendor/
-js/main.js
 js/main.min.js
 js/libs/bootstrap.js
 js/libs/bootstrap.min.js
 editor-styles.css
 style.css
-.sass-cache

@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         }
       },
       "theme": [
-        "js/script.js"
+        "js/main.js"
       ],
     },
     "uglify": {
@@ -36,13 +36,13 @@ module.exports = function(grunt) {
         },
         "files": {
           "js/main.min.js": [
-            "js/script.js",
+            "js/main.js",
             "js/skip-link-focus-fix.js"
           ],
           "js/libs/bootstrap.min.js": [
-            "js/bootstrap/**/*.js",
-            "!js/bootstrap/popover.js",
-            "js/bootstrap/popover.js"
+            "js/libs/bootstrap/**/*.js",
+            "!js/libs/bootstrap/popover.js",
+            "js/libs/bootstrap/popover.js"
           ]
         }
       }
@@ -50,15 +50,15 @@ module.exports = function(grunt) {
     "concat": {
       "bootstrap": {
         "src": [
-          "js/bootstrap/**/*.js",
-          "!js/bootstrap/popover.js",
-          "js/bootstrap/popover.js"
+          "js/libs/bootstrap/**/*.js",
+          "!js/libs/bootstrap/popover.js",
+          "js/libs/bootstrap/popover.js"
         ],
         "dest": "js/libs/bootstrap.js"
       },
       "main": {
         "src": [
-          "js/script.js",
+          "js/main.js",
           "js/skip-link-focus-fix.js"
         ],
         "dest": "js/main.js"
