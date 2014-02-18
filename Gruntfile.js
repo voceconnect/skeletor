@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         }
       },
       "theme": [
-        "js/script.js"
+        "js/main.js"
       ],
     },
     "uglify": {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         },
         "files": {
           "js/main.min.js": [
-            "js/script.js",
+            "js/main.js",
             "js/skip-link-focus-fix.js"
           ],
           "js/libs/bootstrap.min.js": [
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
       },
       "main": {
         "src": [
-          "js/script.js",
+          "js/main.js",
           "js/skip-link-focus-fix.js"
         ],
         "dest": "js/main.js"
