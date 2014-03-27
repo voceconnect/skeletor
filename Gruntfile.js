@@ -61,7 +61,7 @@ module.exports = function(grunt) {
           "js/main.js",
           "js/skip-link-focus-fix.js"
         ],
-        "dest": "js/main.js"
+        "dest": "js/main.min.js"
       }
     },
     "imagemin": {
