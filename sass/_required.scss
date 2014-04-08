@@ -14,10 +14,10 @@ img,
 	}
 }
 .wp-caption {
-	border: 1px solid $lightGray;
+	border: none;
 	margin: 0 0 1em 0;
 	max-width: 100%;
-	background: $lighterGray;
+	background: none;
 	text-align: center;
 	&.aligncenter {
 		margin-bottom: 1em;
@@ -47,7 +47,7 @@ img,
 }
 .gallery-caption {
 	background: transparent;
-	color: $darkGray;
+	color: #333;
 	padding: 0.3125em;
 	p {
 		margin-bottom: 0;

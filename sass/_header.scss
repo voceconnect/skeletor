@@ -4,7 +4,7 @@ header {
 	}
 	position: relative;
 	.navbar-nav {
-		background: $darkerGray;
+		background: #333;
 		@include breakpoint(phone){
 			margin: 0;
 			width: 100%;
@@ -13,10 +13,10 @@ header {
 		& > li {
 			position: relative;
 			a {
-				color: $gray;
+				color: #444;
 			}
 			@include breakpoint(phone){
-				border-bottom: 1px solid $darkGray;
+				border-bottom: 1px solid #333;
 			}
 			ul {
 				display: none;
@@ -27,13 +27,13 @@ header {
 				position: absolute;
 				top: 100%;
 				left: 0;
-				background: $darkerGray;
+				background: #111;
 				li {
 					@include box-sizing(border-box);
 					white-space: nowrap;
 					display: block;
-					border-bottom: 1px solid $darkGray;
-					border-top: 1px solid $lightGray;
+					border-bottom: 1px solid #333;
+					border-top: 1px solid #777;
 					a {
 						display: block;
 						padding: .3725em .5em;
@@ -50,7 +50,7 @@ header {
 					ul {
 						position: relative;
 						top: 0;
-						background: lighten($darkerGray, 10%);
+						background: lighten(#111, 10%);
 						li {
 							&:first-child {
 								border-top: none;
@@ -103,7 +103,7 @@ header {
 
 	.search-field:focus {
 		background-color: #fff;
-		border: 2px solid $gray;
+		border: 2px solid #444;
 		cursor: text;
 		outline: 0;
 		width: 230px;

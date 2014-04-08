@@ -1,9 +1,9 @@
 footer {
 	&[role=contentinfo] {
 		margin-top: 20px;
-		color: $lightGray;
-		background: $darkerGray;
-		border-top: 1px solid $lightGray;
+		color: #555;
+		background: #111;
+		border-top: 1px solid #555;
 		.navbar-nav {
 			li {
 				ul {
@@ -15,10 +15,10 @@ footer {
 			padding: 15px 0;
 		}
 		a {
-			color: $lightGray;
+			color: #777;
 			&:hover {
 				background: none;
-				color: $lighterGray;
+				color: #777;
 			}
 		}
 	}
