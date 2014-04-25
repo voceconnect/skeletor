@@ -69,9 +69,9 @@ module.exports = function(grunt) {
         "files": [
           {
             "expand": true,
-            "cwd": "images/",
+            "cwd": "img/",
             "src": "**/*.{png,jpg}",
-            "dest": "images/"
+            "dest": "img/"
           }
         ]
       }
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
         "tasks": ["jshint", "concat"]
       },
       "images": {
-        "files": "images/**/*.{png,jpg,gif}",
+        "files": "img/**/*.{png,jpg,gif}",
         "tasks": ["imagemin"]
       },
       "composer": {
