@@ -86,10 +86,6 @@ header {
 	}
 	.search-field {
 		background-color: transparent;
-		background-image: image_url('search-icon.png');
-		background-position: 5px center;
-		background-repeat: no-repeat;
-		background-size: 16px 16px;
 		border: none;
 		cursor: pointer;
 		height: 37px;
@@ -108,9 +104,6 @@ header {
 		outline: 0;
 		width: 230px;
 	}
-	.search-submit {
-		display: none;
-	}
 }
 .search-form {
 	position: absolute;
@@ -126,4 +119,3 @@ header {
 		top: 4px;
 	}
 }
-
