@@ -5,5 +5,5 @@ vendor/
 js/main.min.js
 js/libs/bootstrap.js
 js/libs/bootstrap.min.js
-editor-styles.css
 style.css
+editor-styles.css

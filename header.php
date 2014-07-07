@@ -13,14 +13,14 @@
 		<?php do_action( 'before' ); ?>
 		<header role="banner">
 			<div class="container">
-				<form role="search" method="get" class="search-form pull-right" action="/">
+				<form role="search" method="get" class="pull-right" action="/">
 					<label>
 						<span class="screen-reader-text">Search for:</span>
-						<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+						<input type="search" placeholder="Search …" value="" name="s" title="Search for:">
 					</label>
-					<input type="submit" class="search-submit" value="Search">
+					<input type="submit" value="Search">
 				</form>
-				<button class="navbar-toggle visible-phone pull-right" type="button">
+				<button class="visible-xs pull-right" type="button">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
