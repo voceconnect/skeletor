@@ -1,0 +1,108 @@
+/* line 3, sass/flex.scss */
+.flex {
+  /*
+  // must have: flex, inline-flex
+  display: flex;
+
+  // layout: row, row-reverse, column, column-reverse
+  flex-direction: row;
+
+  // allow more than one line wrapping: nowrap, wrap, wrap-reverse
+  flex-wrap: nowrap;
+
+  // shortcut combines flex direction and flex wrap
+  flex-flow: row nowrap;
+
+  // horizontal spacing of items: flex-start, flex-end, center, space-between, space-around
+  justify-content: flex-start;
+
+  // vertical-centering: flex-start, flex-end, center, stretch, baseline,
+  align-items: flex-start;
+
+  // vertically align if extra space: flex-start, flex-end, center, stretch, space-between, space-around
+  align-content: flex-start;
+
+  */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  min-height: 400px;
+  padding: 20px 0;
+  background: #ededed;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 47.9375em) {
+  /* line 3, sass/flex.scss */
+  .flex {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+/* line 47, sass/flex.scss */
+.box {
+  /*
+  // display: order
+  order: 1;
+
+  // if you want one box to get bigger than the others
+  flex-grow: 0;
+
+  // if you want one box to get smaller than the others
+  flex-shrink: 1;
+
+  // seems like a max-width value. default size before space is distributed. probably best applied individually
+  flex-basis: auto;
+
+  // shorthand for flex-grow, flex-shrink, flex-basis
+  flex: 0 1 auto;
+
+  // individually align a box - auto | flex-start | flex-end | center | baseline | stretch
+  align-self: auto;
+  */
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 20%;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+  -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+          align-self: auto;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 20px;
+  margin: 10px 2%;
+  background: gray;
+  border-radius: 8px;
+}
+/* line 89, sass/flex.scss */
+.box img {
+  max-width: 100%;
+  height: auto;
+}
+/* line 94, sass/flex.scss */
+.no-flexbox .box {
+  display: inline-block;
+  max-width: 20%;
+}

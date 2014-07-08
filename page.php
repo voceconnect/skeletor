@@ -15,7 +15,7 @@ get_header();
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-lg-8" role="main" id="primary">
+			<div class="col-sm-12 col-lg-12" role="main" id="primary">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -24,14 +24,14 @@ get_header();
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || '0' != get_comments_number() ) {
-						comments_template();
+						//comments_template();
 					}
 					?>
 
 				<?php endwhile; // end of the loop. ?>
 
 			</div>
-			<?php get_sidebar(); ?>
+			<?php //get_sidebar(); ?>
 		</div>
 	</div>
 </section>
