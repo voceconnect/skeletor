@@ -108,7 +108,7 @@ module.exports = function(grunt) {
       },
       "styles": {
         "files": "sass/**/*.scss",
-        "tasks": ["compass"]
+        "tasks": ["compass:development"]
       }
     },
     "build": {
