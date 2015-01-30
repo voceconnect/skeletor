@@ -5,7 +5,7 @@
  *
  * @package skeletor
  */
-add_editor_style( 'editor-style.css' );
+add_editor_style( 'editor-styles.css' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
