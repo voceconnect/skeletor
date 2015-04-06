@@ -93,6 +93,11 @@ module.exports = function(grunt) {
         }
       }
     },
+    "autoprefixer": {
+      "multiple_files": {
+        "src": "*.css"
+      }
+    },
     "watch": {
       "scripts": {
         "files": "js/**/*.js",
@@ -108,19 +113,20 @@ module.exports = function(grunt) {
       },
       "styles": {
         "files": "sass/**/*.scss",
-        "tasks": ["compass:development"]
+        "tasks": ["compass:development", "autoprefixer"]
       }
     },
     "build": {
-      "production": ["uglify", "composer:install:no-dev:optimize-autoloader", "compass:production"],
-      "uat": ["uglify", "composer:install:no-dev:optimize-autoloader", "compass:production"],
-      "staging": ["concat", "composer:install", "compass:development"],
-      "development": ["concat", "composer:install", "compass:development"]
+      "production": ["uglify", "composer:install:no-dev:optimize-autoloader", "compass:production", "autoprefixer"],
+      "uat": ["uglify", "composer:install:no-dev:optimize-autoloader", "compass:production", "autoprefixer"],
+      "staging": ["concat", "composer:install", "compass:development", "autoprefixer"],
+      "development": ["concat", "composer:install", "compass:development", "autoprefixer"]
     }
   });
 
   //load the tasks
   grunt.loadNpmTasks('grunt-voce-plugins');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   //set the default task as the development build
   grunt.registerTask('default', ['build:development']);
