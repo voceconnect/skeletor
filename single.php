@@ -10,7 +10,7 @@ get_header();
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-lg-8" role="main" id="primary">
+			<div class="col-sm-8" role="main" id="primary">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 

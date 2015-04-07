@@ -16,7 +16,7 @@ get_header();
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-lg-8" role="main" id="primary">
+			<div class="col-sm-8" role="main" id="primary">
 
 				<?php if ( have_posts() ) : ?>
 
