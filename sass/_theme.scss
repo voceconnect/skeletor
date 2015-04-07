@@ -1,9 +1,13 @@
 @import "compass";
+
+@import "variables";
+@import "mixins";
+
+@import "fonts";
 @import "underscores";
 @import "bootstrap";
-@import "mixins";
-@import "fonts";
 @import "required";
+
 @import "header";
 @import "loop";
 @import "footer";

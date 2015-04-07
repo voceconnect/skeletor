@@ -1,5 +1,9 @@
 @import "compass";
+
+@import "variables";
 @import "mixins";
+
+@import "fonts";
 @import "bootstrap/mixins";
 @import "bootstrap/variables";
 @import "bootstrap/scaffolding";
@@ -9,7 +13,6 @@
 @import "bootstrap/type";
 @import "bootstrap/grid";
 @import "required";
-@import "fonts";
 @import "loop";
 
 .wp-editor {
