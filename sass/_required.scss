@@ -59,12 +59,15 @@ img,
 .bypostauthor {
 	position: static;
 }
-img.alignright {
+.screen-reader-text {
+	@extend .sr-only;
+}
+.alignright {
 	margin: 0.6125em 0 0.6125em 0.75em;
 }
-img.alignleft {
+.alignleft {
 	margin: 0.6125em 0.75em 0.6125em 0;
 }
-img.aligncenter {
+.aligncenter {
 	margin: 0.6125em 0;
 }
