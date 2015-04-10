@@ -28,7 +28,9 @@ get_header();
 				<?php endwhile; // end of the loop. ?>
 
 			</div>
-			<?php get_sidebar(); ?>
+			<div class="col-sm-4" id="secondary">
+				<?php get_sidebar(); ?>
+			</div>
 		</div>
 	</div>
 </section>

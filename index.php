@@ -42,7 +42,9 @@ get_header();
 				<?php endif; ?>
 
 			</div>
-			<?php get_sidebar(); ?>			
+			<div class="col-sm-4" id="secondary">
+				<?php get_sidebar(); ?>	
+			</div>
 		</div>
 	</div>
 </section>
