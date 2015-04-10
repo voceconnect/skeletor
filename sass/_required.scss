@@ -63,9 +63,11 @@ img,
 	@extend .sr-only;
 }
 .alignright {
+	float: right;
 	margin: 0.6125em 0 0.6125em 0.75em;
 }
 .alignleft {
+	float: left;
 	margin: 0.6125em 0.75em 0.6125em 0;
 }
 .aligncenter {
