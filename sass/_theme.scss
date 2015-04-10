@@ -1,12 +1,15 @@
 @import "compass";
+@import "compass/reset";
 
 @import "variables";
 @import "mixins";
 
 @import "fonts";
-@import "underscores";
+@import "font-awesome/font-awesome";
+
 @import "bootstrap";
-@import "required";
+@import "required"; // Styles required by VIP.
+@import "global"; // Global defaults. Override if needed.
 
 @import "header";
 @import "loop";
