@@ -10,7 +10,7 @@ get_header();
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-md012" role="main" id="primary">
+			<div class="col-md-12" role="main" id="primary">
 
 				<section class="error-404 not-found">
 					<header class="page-header">

@@ -59,12 +59,17 @@ img,
 .bypostauthor {
 	position: static;
 }
-img.alignright {
-	margin: .6125em 0 .6125em .75em;
+.screen-reader-text {
+	@extend .sr-only;
 }
-img.alignleft {
-	margin: 6125em .75em 6125em 0;
+.alignright {
+	float: right;
+	margin: 0.6125em 0 0.6125em 0.75em;
 }
-img.aligncenter {
-	margin: .6125em 0;
+.alignleft {
+	float: left;
+	margin: 0.6125em 0.75em 0.6125em 0;
+}
+.aligncenter {
+	margin: 0.6125em 0;
 }

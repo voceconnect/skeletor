@@ -10,7 +10,7 @@ get_header();
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-lg-8" role="main" id="primary">
+			<div class="col-sm-8" role="main" id="primary">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -28,7 +28,9 @@ get_header();
 				<?php endwhile; // end of the loop. ?>
 
 			</div>
-			<?php get_sidebar(); ?>
+			<div class="col-sm-4" id="secondary">
+				<?php get_sidebar(); ?>
+			</div>
 		</div>
 	</div>
 </section>

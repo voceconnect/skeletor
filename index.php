@@ -16,7 +16,7 @@ get_header();
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-lg-8" role="main" id="primary">
+			<div class="col-sm-8" role="main" id="primary">
 
 				<?php if ( have_posts() ) : ?>
 
@@ -42,7 +42,9 @@ get_header();
 				<?php endif; ?>
 
 			</div>
-			<?php get_sidebar(); ?>			
+			<div class="col-sm-4" id="secondary">
+				<?php get_sidebar(); ?>	
+			</div>
 		</div>
 	</div>
 </section>

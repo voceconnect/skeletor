@@ -5,7 +5,7 @@
  * @package skeletor
  */
 ?>
-<aside class="col-sm-4 col-lg-4" role="complementary" id="secondary">
+<aside class="sidebar" role="complementary">
 	<?php do_action( 'before_sidebar' ); ?>
 	<?php if ( !dynamic_sidebar( 'sidebar-1' ) ) : ?>
 

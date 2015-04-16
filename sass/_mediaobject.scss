@@ -1,0 +1,8 @@
+// The majority of the media object's styles are provided by bootstrap.
+// These should be primarily site-specific overrides.
+
+.media {
+	.media-object {
+		max-width: none; // our default image max-width set in _required breaks media object images.
+	}
+}
