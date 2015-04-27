@@ -95,7 +95,7 @@ module.exports = function(grunt) {
     },
     "autoprefixer": {
       "multiple_files": {
-        "src": "*.css"
+        "src": "./*.css"
       }
     },
     "watch": {
