@@ -10,7 +10,7 @@
 	<?php if ( !dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
 		<aside id="archives" class="widget">
-			<h3><?php _e( 'Archives', 'skeletor' ); ?></h3>
+			<h3><?php esc_html_e( 'Archives', 'skeletor' ); ?></h3>
 			<ul>
 				<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 			</ul>

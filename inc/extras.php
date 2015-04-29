@@ -51,7 +51,7 @@ function skeletor_wp_title( $title, $sep ) {
 		return $title;
 
 	// Add the blog name
-	$title .= get_bloginfo( 'name' );
+	$title .= get_bloginfo( 'name', 'display' );
 
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );

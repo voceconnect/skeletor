@@ -18,7 +18,7 @@
 					$parent_permalink = get_permalink( $parent_id );
 
 					if ( $parent_permalink ) {
-						echo '<p><a href="' . $parent_permalink . '">&larr; ' . $parent_title . '</a></p>';
+						echo '<p><a href="' . $parent_permalink . '">&larr; ' . esc_html( $parent_title ) . '</a></p>';
 					}
 					?>
 				<?php endwhile; // end of the loop. ?>

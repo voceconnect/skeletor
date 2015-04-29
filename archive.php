@@ -30,7 +30,7 @@ get_header();
 								 * what author we're dealing with (if that is the case).
 								 */
 								the_post();
-								printf( __( 'Author: %s', 'skeletor' ), '<span class="vcard">' . get_the_author() . '</span>' );
+								printf( esc_html__( 'Author: %s', 'skeletor' ), '<span class="vcard">' . get_the_author() . '</span>' );
 								/* Since we called the_post() above, we need to
 								 * rewind the loop back to the beginning that way
 								 * we can run the loop properly, in full.
@@ -38,31 +38,31 @@ get_header();
 								rewind_posts();
 
 							elseif ( is_day() ) :
-								printf( __( 'Day: %s', 'skeletor' ), '<span>' . get_the_date() . '</span>' );
+								printf( esc_html__( 'Day: %s', 'skeletor' ), '<span>' . get_the_date() . '</span>' );
 
 							elseif ( is_month() ) :
-								printf( __( 'Month: %s', 'skeletor' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+								printf( esc_html__( 'Month: %s', 'skeletor' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 							elseif ( is_year() ) :
-								printf( __( 'Year: %s', 'skeletor' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+								printf( esc_html__( 'Year: %s', 'skeletor' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 							elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-								_e( 'Asides', 'skeletor' );
+								esc_html_e 'Asides', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-								_e( 'Images', 'skeletor' );
+								esc_html_e 'Images', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-								_e( 'Videos', 'skeletor' );
+								esc_html_e 'Videos', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-								_e( 'Quotes', 'skeletor' );
+								esc_html_e 'Quotes', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-								_e( 'Links', 'skeletor' );
+								esc_html_e 'Links', 'skeletor' );
 
 							else :
-								_e( 'Archives', 'skeletor' );
+								esc_html_e 'Archives', 'skeletor' );
 
 							endif;
 							?>
