@@ -60,7 +60,7 @@ function skeletor_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __( 'Page %s', 'skeletor' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'skeletor' ), max( $paged, $page ) );
 
 	return $title;
 }
