@@ -47,22 +47,22 @@ get_header();
 								printf( esc_html__( 'Year: %s', 'skeletor' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 							elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-								esc_html_e 'Asides', 'skeletor' );
+								esc_html_e( 'Asides', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-								esc_html_e 'Images', 'skeletor' );
+								esc_html_e( 'Images', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-								esc_html_e 'Videos', 'skeletor' );
+								esc_html_e( 'Videos', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-								esc_html_e 'Quotes', 'skeletor' );
+								esc_html_e( 'Quotes', 'skeletor' );
 
 							elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-								esc_html_e 'Links', 'skeletor' );
+								esc_html_e( 'Links', 'skeletor' );
 
 							else :
-								esc_html_e 'Archives', 'skeletor' );
+								esc_html_e( 'Archives', 'skeletor' );
 
 							endif;
 							?>
