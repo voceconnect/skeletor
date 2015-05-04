@@ -48,7 +48,7 @@ function skeletor_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	if ( is_feed() )
-		return $title;
+		return esc_html( $title );
 
 	// Add the blog name
 	$title .= get_bloginfo( 'name', 'display' );
@@ -62,7 +62,7 @@ function skeletor_wp_title( $title, $sep ) {
 	if ( $paged >= 2 || $page >= 2 )
 		$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'skeletor' ), max( $paged, $page ) );
 
-	return $title;
+	return esc_html( $title );
 }
 
 add_filter( 'wp_title', 'skeletor_wp_title', 10, 2 );

@@ -38,13 +38,13 @@ get_header();
 								rewind_posts();
 
 							elseif ( is_day() ) :
-								printf( esc_html__( 'Day: %s', 'skeletor' ), '<span>' . get_the_date() . '</span>' );
+								printf( esc_html__( 'Day: %s', 'skeletor' ), '<span>' . esc_html( get_the_date() ) . '</span>' );
 
 							elseif ( is_month() ) :
-								printf( esc_html__( 'Month: %s', 'skeletor' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+								printf( esc_html__( 'Month: %s', 'skeletor' ), '<span>' . esc_html( get_the_date( 'F Y' ) ) . '</span>' );
 
 							elseif ( is_year() ) :
-								printf( esc_html__( 'Year: %s', 'skeletor' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+								printf( esc_html__( 'Year: %s', 'skeletor' ), '<span>' . esc_html( get_the_date( 'Y' ) ) . '</span>' );
 
 							elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 								esc_html_e( 'Asides', 'skeletor' );
